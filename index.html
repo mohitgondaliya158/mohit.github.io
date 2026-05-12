@@ -1,88 +1,285 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uday Babariya - iOS Developer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #444;
-    }
-    .skills, .apps, .reviews {
-      display: grid;
-      gap: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #222;
-      color: #fff;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Uday Babariya</h1>
-    <p>Senior iOS Developer | 7+ Years Experience</p>
-  </header>
+export default function PortfolioWebsite() {
+  const skills = {
+    kmp: [
+      'Kotlin Multiplatform (KMP/KMM)',
+      'Ktor',
+      'SQLDelight',
+      'Coroutines & Flow',
+      'KMP-NativeCoroutines',
+      'Shared Business Logic',
+    ],
+    ios: [
+      'Swift',
+      'SwiftUI',
+      'UIKit',
+      'Objective-C',
+      'Core Data',
+      'SSL Pinning',
+    ],
+    android: [
+      'Kotlin',
+      'Jetpack Compose',
+      'Retrofit',
+      'Room Database',
+      'Firebase',
+      'Hilt / Dagger',
+    ],
+  }
 
-  <section>
-    <h2>About Me</h2>
-    <p>Hey there! I'm an iOS app developer with more than 7 years of experience. Currently, I work as a Senior iOS Developer at IQVIA in the Healthcare field.</p>
-  </section>
+  const projects = [
+    {
+      title: 'SGMarkets Enterprise App',
+      description:
+        'Secure enterprise banking application built with SwiftUI and secure WebView integration for internal employee access.',
+      tech: 'SwiftUI • Encryption • Secure Session Handling • Banking Security',
+    },
+    {
+      title: 'KYC Eye',
+      description:
+        'Customer KYC verification and document management application with secure upload workflows.',
+      tech: 'SwiftUI • REST APIs • Secure Authentication',
+    },
+    {
+      title: 'My Ayvens India',
+      description:
+        'Fleet and vehicle management application focused on modern user experience and enterprise reliability.',
+      tech: 'SwiftUI • MVVM • API Integration',
+    },
+    {
+      title: 'Roadyo & Roadyo Partner',
+      description:
+        'Multi-service platform for logistics, ride booking, food ordering, and delivery management.',
+      tech: 'iOS • MQTT • Agora Calling • Payment Gateway',
+    },
+    {
+      title: 'Meaty App',
+      description:
+        'Fresh meat and seafood ordering application with complete App Store deployment.',
+      tech: 'Swift • Firebase • In-App Purchases',
+    },
+  ]
 
-  <section>
-    <h2>My Journey</h2>
-    <p>Started at Cygnus Softtech in 2016, worked on crypto wallets, hospitality, white-label apps, and currently healthcare. 🚀</p>
-  </section>
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-black to-gray-800 text-white py-20 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 className="text-5xl font-bold leading-tight mb-4">
+              Mohit Gondaliya
+            </h1>
+            <p className="text-2xl font-medium text-gray-300 mb-6">
+              Freelance Kotlin Multiplatform & Mobile App Developer
+            </p>
+            <p className="text-lg text-gray-200 leading-relaxed mb-8">
+              8+ years of experience building secure, scalable, and
+              production-ready iOS, Android, and Kotlin Multiplatform
+              applications for fintech, logistics, banking, and enterprise
+              clients.
+            </p>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Swift, SwiftUI, UIKit</li>
-      <li>Firebase, Alamofire, REST APIs</li>
-      <li>Core Data, Realm, SQL</li>
-      <li>MVVM, MVC, Coordinator Patterns</li>
-      <li>Unit Testing & Debugging</li>
-    </ul>
-  </section>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="mailto:mohitgondaliya158@gmail.com"
+                className="bg-white text-black px-6 py-3 rounded-2xl font-semibold shadow-lg hover:scale-105 transition"
+              >
+                Hire Me
+              </a>
 
-  <section class="apps">
-    <h2>Apps</h2>
-    <p>12+ published apps across iPhone, iPad, and Mac.</p>
-  </section>
+              <a
+                href="https://linkedin.com/in/mohitgondaliya"
+                target="_blank"
+                className="border border-white px-6 py-3 rounded-2xl font-semibold hover:bg-white hover:text-black transition"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
 
-  <section class="reviews">
-    <h2>Reviews & Recommendations</h2>
-    <blockquote>“Very creative iOS developer. Always goes beyond project requirements.” – Vishal Davara</blockquote>
-    <blockquote>“A true asset for any team, highly dedicated and skilled.” – Deepanshu Sharma</blockquote>
-  </section>
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl">
+            <div className="space-y-5">
+              <div>
+                <h3 className="text-xl font-semibold">Location</h3>
+                <p className="text-gray-300">Bangalore, India</p>
+              </div>
 
-  <footer>
-    <p>© Uday Babariya 2025 | <a href="https://github.com/yourusername" style="color:#fff;">GitHub</a> | <a href="https://linkedin.com/in/yourusername" style="color:#fff;">LinkedIn</a></p>
-  </footer>
-</body>
-</html>
+              <div>
+                <h3 className="text-xl font-semibold">Availability</h3>
+                <p className="text-gray-300">
+                  Remote Freelance Projects Worldwide
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold">Specialization</h3>
+                <p className="text-gray-300">
+                  KMP/KMM • SwiftUI • Jetpack Compose • Banking Security
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold">Experience</h3>
+                <p className="text-gray-300">8+ Years Mobile Development</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8">About Me</h2>
+          <div className="bg-white rounded-3xl shadow-lg p-8 leading-8 text-lg">
+            I am a freelance mobile developer focused on Kotlin
+            Multiplatform, iOS, and Android development. I help startups,
+            businesses, and enterprise clients build scalable applications with
+            shared business logic across platforms.
+            <br />
+            <br />
+            My expertise includes banking-grade security, API integrations,
+            real-time applications, enterprise mobility, and cross-platform
+            architecture using KMP.
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Technical Skills</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 rounded-3xl p-8 shadow-md">
+              <h3 className="text-2xl font-bold mb-6">KMP / Shared Layer</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.kmp.map((item) => (
+                  <span
+                    key={item}
+                    className="bg-black text-white px-4 py-2 rounded-full text-sm"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-3xl p-8 shadow-md">
+              <h3 className="text-2xl font-bold mb-6">iOS Development</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.ios.map((item) => (
+                  <span
+                    key={item}
+                    className="bg-black text-white px-4 py-2 rounded-full text-sm"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-3xl p-8 shadow-md">
+              <h3 className="text-2xl font-bold mb-6">Android Development</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.android.map((item) => (
+                  <span
+                    key={item}
+                    className="bg-black text-white px-4 py-2 rounded-full text-sm"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Featured Projects</h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project) => (
+              <div
+                key={project.title}
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition"
+              >
+                <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                <p className="text-gray-700 leading-7 mb-4">
+                  {project.description}
+                </p>
+                <div className="text-sm font-medium text-gray-500">
+                  {project.tech}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Freelance Services</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-8 rounded-3xl shadow-md">
+              <h3 className="text-2xl font-bold mb-4">KMP Development</h3>
+              <p className="leading-7 text-gray-700">
+                Shared business logic architecture for iOS and Android using
+                Kotlin Multiplatform.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 p-8 rounded-3xl shadow-md">
+              <h3 className="text-2xl font-bold mb-4">Mobile App Development</h3>
+              <p className="leading-7 text-gray-700">
+                Complete iOS and Android application development using modern
+                frameworks and best practices.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 p-8 rounded-3xl shadow-md">
+              <h3 className="text-2xl font-bold mb-4">App Maintenance</h3>
+              <p className="leading-7 text-gray-700">
+                Performance optimization, bug fixing, upgrades, and long-term
+                application maintenance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="py-20 px-6 bg-black text-white text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl font-bold mb-6">Let’s Build Something Great</h2>
+
+          <p className="text-xl text-gray-300 leading-8 mb-10">
+            Available for freelance mobile development projects, KMP
+            architecture consulting, and long-term collaborations.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-6 text-lg">
+            <a
+              href="mailto:mohitgondaliya158@gmail.com"
+              className="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition"
+            >
+              Email Me
+            </a>
+
+            <a
+              href="https://linkedin.com/in/mohitgondaliya"
+              target="_blank"
+              className="border border-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-black transition"
+            >
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
