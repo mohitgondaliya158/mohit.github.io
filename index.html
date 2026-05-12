@@ -1,285 +1,352 @@
-export default function PortfolioWebsite() {
-  const skills = {
-    kmp: [
-      'Kotlin Multiplatform (KMP/KMM)',
-      'Ktor',
-      'SQLDelight',
-      'Coroutines & Flow',
-      'KMP-NativeCoroutines',
-      'Shared Business Logic',
-    ],
-    ios: [
-      'Swift',
-      'SwiftUI',
-      'UIKit',
-      'Objective-C',
-      'Core Data',
-      'SSL Pinning',
-    ],
-    android: [
-      'Kotlin',
-      'Jetpack Compose',
-      'Retrofit',
-      'Room Database',
-      'Firebase',
-      'Hilt / Dagger',
-    ],
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohit Gondaliya | Freelance KMP Developer</title>
 
-  const projects = [
-    {
-      title: 'SGMarkets Enterprise App',
-      description:
-        'Secure enterprise banking application built with SwiftUI and secure WebView integration for internal employee access.',
-      tech: 'SwiftUI • Encryption • Secure Session Handling • Banking Security',
-    },
-    {
-      title: 'KYC Eye',
-      description:
-        'Customer KYC verification and document management application with secure upload workflows.',
-      tech: 'SwiftUI • REST APIs • Secure Authentication',
-    },
-    {
-      title: 'My Ayvens India',
-      description:
-        'Fleet and vehicle management application focused on modern user experience and enterprise reliability.',
-      tech: 'SwiftUI • MVVM • API Integration',
-    },
-    {
-      title: 'Roadyo & Roadyo Partner',
-      description:
-        'Multi-service platform for logistics, ride booking, food ordering, and delivery management.',
-      tech: 'iOS • MQTT • Agora Calling • Payment Gateway',
-    },
-    {
-      title: 'Meaty App',
-      description:
-        'Fresh meat and seafood ordering application with complete App Store deployment.',
-      tech: 'Swift • Firebase • In-App Purchases',
-    },
-  ]
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-black to-gray-800 text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h1 className="text-5xl font-bold leading-tight mb-4">
-              Mohit Gondaliya
-            </h1>
-            <p className="text-2xl font-medium text-gray-300 mb-6">
-              Freelance Kotlin Multiplatform & Mobile App Developer
-            </p>
-            <p className="text-lg text-gray-200 leading-relaxed mb-8">
-              8+ years of experience building secure, scalable, and
-              production-ready iOS, Android, and Kotlin Multiplatform
-              applications for fintech, logistics, banking, and enterprise
-              clients.
-            </p>
+    body {
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
 
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="mailto:mohitgondaliya158@gmail.com"
-                className="bg-white text-black px-6 py-3 rounded-2xl font-semibold shadow-lg hover:scale-105 transition"
-              >
-                Hire Me
-              </a>
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-              <a
-                href="https://linkedin.com/in/mohitgondaliya"
-                target="_blank"
-                className="border border-white px-6 py-3 rounded-2xl font-semibold hover:bg-white hover:text-black transition"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
+    header {
+      background: linear-gradient(135deg, #111, #333);
+      color: white;
+      padding: 80px 0;
+    }
 
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl">
-            <div className="space-y-5">
-              <div>
-                <h3 className="text-xl font-semibold">Location</h3>
-                <p className="text-gray-300">Bangalore, India</p>
-              </div>
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
 
-              <div>
-                <h3 className="text-xl font-semibold">Availability</h3>
-                <p className="text-gray-300">
-                  Remote Freelance Projects Worldwide
-                </p>
-              </div>
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
 
-              <div>
-                <h3 className="text-xl font-semibold">Specialization</h3>
-                <p className="text-gray-300">
-                  KMP/KMM • SwiftUI • Jetpack Compose • Banking Security
-                </p>
-              </div>
+    .hero-text h1 {
+      font-size: 54px;
+      margin-bottom: 15px;
+    }
 
-              <div>
-                <h3 className="text-xl font-semibold">Experience</h3>
-                <p className="text-gray-300">8+ Years Mobile Development</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    .hero-text h2 {
+      font-size: 28px;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
 
-      {/* About */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8">About Me</h2>
-          <div className="bg-white rounded-3xl shadow-lg p-8 leading-8 text-lg">
-            I am a freelance mobile developer focused on Kotlin
-            Multiplatform, iOS, and Android development. I help startups,
-            businesses, and enterprise clients build scalable applications with
-            shared business logic across platforms.
-            <br />
-            <br />
-            My expertise includes banking-grade security, API integrations,
-            real-time applications, enterprise mobility, and cross-platform
-            architecture using KMP.
-          </div>
-        </div>
-      </section>
+    .hero-text p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
 
-      {/* Skills */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">Technical Skills</h2>
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 rounded-3xl p-8 shadow-md">
-              <h3 className="text-2xl font-bold mb-6">KMP / Shared Layer</h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.kmp.map((item) => (
-                  <span
-                    key={item}
-                    className="bg-black text-white px-4 py-2 rounded-full text-sm"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+    .btn:hover {
+      transform: translateY(-3px);
+    }
 
-            <div className="bg-gray-50 rounded-3xl p-8 shadow-md">
-              <h3 className="text-2xl font-bold mb-6">iOS Development</h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.ios.map((item) => (
-                  <span
-                    key={item}
-                    className="bg-black text-white px-4 py-2 rounded-full text-sm"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+    .hero-card {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
 
-            <div className="bg-gray-50 rounded-3xl p-8 shadow-md">
-              <h3 className="text-2xl font-bold mb-6">Android Development</h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.android.map((item) => (
-                  <span
-                    key={item}
-                    className="bg-black text-white px-4 py-2 rounded-full text-sm"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    .hero-card h3 {
+      margin-bottom: 10px;
+      color: white;
+    }
 
-      {/* Projects */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">Featured Projects</h2>
+    .hero-card p {
+      margin-bottom: 20px;
+      color: #ddd;
+    }
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition"
-              >
-                <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                <p className="text-gray-700 leading-7 mb-4">
-                  {project.description}
-                </p>
-                <div className="text-sm font-medium text-gray-500">
-                  {project.tech}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    section {
+      padding: 80px 0;
+    }
 
-      {/* Services */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">Freelance Services</h2>
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-3xl shadow-md">
-              <h3 className="text-2xl font-bold mb-4">KMP Development</h3>
-              <p className="leading-7 text-gray-700">
-                Shared business logic architecture for iOS and Android using
-                Kotlin Multiplatform.
-              </p>
-            </div>
+    .about-box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      font-size: 18px;
+    }
 
-            <div className="bg-gray-50 p-8 rounded-3xl shadow-md">
-              <h3 className="text-2xl font-bold mb-4">Mobile App Development</h3>
-              <p className="leading-7 text-gray-700">
-                Complete iOS and Android application development using modern
-                frameworks and best practices.
-              </p>
-            </div>
+    .skills-grid,
+    .projects-grid,
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
 
-            <div className="bg-gray-50 p-8 rounded-3xl shadow-md">
-              <h3 className="text-2xl font-bold mb-4">App Maintenance</h3>
-              <p className="leading-7 text-gray-700">
-                Performance optimization, bug fixing, upgrades, and long-term
-                application maintenance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
 
-      {/* Contact */}
-      <section className="py-20 px-6 bg-black text-white text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-6">Let’s Build Something Great</h2>
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-          <p className="text-xl text-gray-300 leading-8 mb-10">
-            Available for freelance mobile development projects, KMP
-            architecture consulting, and long-term collaborations.
-          </p>
+    .card h3 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
 
-          <div className="flex flex-wrap justify-center gap-6 text-lg">
-            <a
-              href="mailto:mohitgondaliya158@gmail.com"
-              className="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition"
-            >
-              Email Me
-            </a>
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-            <a
-              href="https://linkedin.com/in/mohitgondaliya"
-              target="_blank"
-              className="border border-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-black transition"
-            >
-              Connect on LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
+    .tag {
+      background: black;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 14px;
+    }
+
+    footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    footer h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      color: #ccc;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    @media(max-width:768px) {
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .hero-text h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container hero">
+      <div class="hero-text">
+        <h1>Mohit Gondaliya</h1>
+        <h2>Freelance Kotlin Multiplatform & Mobile Developer</h2>
+
+        <p>
+          8+ years of experience building scalable iOS, Android, and Kotlin Multiplatform applications for banking, fintech, logistics, and enterprise clients.
+        </p>
+
+        <a href="mailto:mohitgondaliya158@gmail.com" class="btn">Hire Me</a>
+        <a href="https://linkedin.com/in/mohitgondaliya" target="_blank" class="btn">LinkedIn</a>
+      </div>
+
+      <div class="hero-card">
+        <h3>Location</h3>
+        <p>Bangalore, India</p>
+
+        <h3>Experience</h3>
+        <p>8+ Years Mobile Development</p>
+
+        <h3>Specialization</h3>
+        <p>KMP/KMM • SwiftUI • Jetpack Compose • Banking Security</p>
+
+        <h3>Availability</h3>
+        <p>Available for Remote Freelance Projects</p>
+      </div>
     </div>
-  )
-}
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-box">
+        I am a freelance mobile application developer specializing in Kotlin Multiplatform (KMP), iOS, and Android development. I help startups, businesses, and enterprise teams build secure, scalable, and production-ready mobile applications.
+        <br><br>
+        My expertise includes SwiftUI, Jetpack Compose, shared KMP architecture, banking-grade security, REST APIs, real-time applications, and enterprise mobility solutions.
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills-grid">
+        <div class="card">
+          <h3>KMP / Shared Layer</h3>
+
+          <div class="skill-tags">
+            <span class="tag">Kotlin Multiplatform</span>
+            <span class="tag">Ktor</span>
+            <span class="tag">SQLDelight</span>
+            <span class="tag">Coroutines</span>
+            <span class="tag">Flow</span>
+            <span class="tag">KMM</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>iOS Development</h3>
+
+          <div class="skill-tags">
+            <span class="tag">Swift</span>
+            <span class="tag">SwiftUI</span>
+            <span class="tag">UIKit</span>
+            <span class="tag">Objective-C</span>
+            <span class="tag">Core Data</span>
+            <span class="tag">SSL Pinning</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Android Development</h3>
+
+          <div class="skill-tags">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Retrofit</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Room</span>
+            <span class="tag">MVVM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="projects-grid">
+        <div class="card">
+          <h3>SGMarkets Enterprise App</h3>
+          <p>
+            Secure banking enterprise application with SwiftUI and encrypted WebView integration.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>KYC Eye</h3>
+          <p>
+            Customer verification and secure document management mobile application.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>My Ayvens India</h3>
+          <p>
+            Fleet management application focused on modern UX and enterprise reliability.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Roadyo & Roadyo Partner</h3>
+          <p>
+            Multi-service logistics, ride booking, food delivery, and partner management platform.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;">
+    <div class="container">
+      <h2 class="section-title">Freelance Services</h2>
+
+      <div class="services-grid">
+        <div class="card">
+          <h3>KMP Development</h3>
+          <p>
+            Shared codebase architecture for Android and iOS using Kotlin Multiplatform.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Mobile App Development</h3>
+          <p>
+            End-to-end iOS and Android application development using modern frameworks.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Maintenance & Support</h3>
+          <p>
+            Bug fixing, performance optimization, upgrades, and long-term app maintenance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h2>Let’s Build Something Great</h2>
+
+    <p>
+      Available for freelance projects, KMP consulting, and mobile application development.
+    </p>
+
+    <a href="mailto:mohitgondaliya158@gmail.com" class="btn">Contact Me</a>
+  </footer>
+
+</body>
+</html>
