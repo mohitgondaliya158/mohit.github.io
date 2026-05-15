@@ -1,496 +1,731 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Mohit Gondaliya | Senior Mobile Engineer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    :root{
+      --primary:#2563eb;
+      --primary-light:#dbeafe;
+      --dark:#0f172a;
+      --gray:#64748b;
+      --light:#f8fafc;
+      --white:#ffffff;
+      --border:#e2e8f0;
+      --shadow:0 10px 40px rgba(15,23,42,0.08);
+      --radius:28px;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f4f7fb;
-      color: #111827;
-      overflow-x: hidden;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    img {
-      width: 100%;
-      display: block;
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f3f7fb;
+      color:var(--dark);
+      overflow-x:hidden;
     }
 
-    a {
-      text-decoration: none;
+    img{
+      width:100%;
+      display:block;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+    a{
+      text-decoration:none;
     }
 
-    /* ================= NAVBAR ================= */
+    .container{
+      width:92%;
+      max-width:1280px;
+      margin:auto;
+    }
+
+    section{
+      padding:110px 0;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      background:rgba(255,255,255,0.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-wrapper{
+      height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:30px;
+      font-weight:800;
+      color:var(--dark);
+    }
+
+    .logo span{
+      font-size:32px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:34px;
+    }
+
+    .nav-links a{
+      color:var(--dark);
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:var(--primary);
+    }
+
+    .contact-btn{
+      padding:13px 24px;
+      border-radius:999px;
+      border:2px solid var(--primary);
+      color:var(--primary) !important;
+    }
+
+    .contact-btn:hover{
+      background:var(--primary);
+      color:white !important;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      padding-top:140px;
+      overflow:hidden;
+    }
+
+    .blur{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(80px);
+      z-index:0;
+    }
+
+    .blur1{
+      width:280px;
+      height:280px;
+      background:#bfdbfe;
+      top:120px;
+      left:-50px;
+    }
+
+    .blur2{
+      width:260px;
+      height:260px;
+      background:#c7d2fe;
+      bottom:50px;
+      right:-80px;
+    }
+
+    .hero-wrapper{
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:70px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      z-index: 1000;
+    .hero-left h4{
+      display:inline-block;
+      background:var(--primary-light);
+      color:var(--primary);
+      padding:10px 18px;
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:24px;
+      font-weight:700;
     }
 
-    .nav-wrapper {
-      height: 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .hero-left h1{
+      font-size:78px;
+      line-height:1.05;
+      font-weight:900;
+      margin-bottom:18px;
+      letter-spacing:-2px;
     }
 
-    .logo {
-      font-size: 30px;
-      font-weight: 800;
+    .hero-left h2{
+      color:var(--primary);
+      font-size:34px;
+      margin-bottom:24px;
+      font-weight:700;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      align-items: center;
+    .hero-left p{
+      font-size:18px;
+      line-height:1.9;
+      color:var(--gray);
+      max-width:700px;
+      margin-bottom:40px;
     }
 
-    .nav-links a {
-      color: #111827;
-      font-weight: 600;
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
     }
 
-    .contact-btn {
-      padding: 12px 24px;
-      border-radius: 50px;
-      border: 2px solid #2563eb;
-      color: #2563eb !important;
+    .btn{
+      padding:16px 28px;
+      border-radius:16px;
+      font-weight:700;
+      transition:0.3s;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    /* ================= HERO ================= */
+    .btn:hover{
+      transform:translateY(-5px);
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:white;
+      box-shadow:0 12px 30px rgba(37,99,235,0.28);
+    }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: 120px;
+    .btn-secondary{
+      background:white;
+      border:1px solid var(--border);
+      color:var(--dark);
     }
 
-    .hero-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-      flex-wrap: wrap;
+    /* =========================
+       HERO CARD
+    ========================== */
+
+    .hero-right{
+      position:relative;
+      display:flex;
+      justify-content:center;
     }
 
-    .hero-left {
-      flex: 1;
-      min-width: 320px;
+    .profile-card{
+      width:440px;
+      background:white;
+      border-radius:38px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      position:relative;
+      z-index:3;
     }
 
-    .hero-left h1 {
-      font-size: 72px;
-      line-height: 1.1;
-      margin-bottom: 18px;
-      font-weight: 800;
+    .profile-image{
+      position:relative;
     }
 
-    .hero-left h2 {
-      color: #2563eb;
-      font-size: 30px;
-      margin-bottom: 25px;
+    .profile-image img{
+      height:520px;
+      object-fit:cover;
     }
 
-    .hero-left p {
-      font-size: 18px;
-      color: #4b5563;
-      line-height: 1.9;
-      margin-bottom: 35px;
-      max-width: 650px;
+    .experience-badge{
+      position:absolute;
+      bottom:20px;
+      right:20px;
+      background:white;
+      padding:18px 22px;
+      border-radius:20px;
+      box-shadow:var(--shadow);
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .experience-badge h3{
+      font-size:28px;
+      color:var(--primary);
+      margin-bottom:4px;
     }
 
-    .btn {
-      padding: 15px 28px;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: 0.3s;
-      display: inline-block;
+    .experience-badge p{
+      color:var(--gray);
+      font-size:14px;
+      font-weight:600;
     }
 
-    .btn-primary {
-      background: #2563eb;
-      color: white;
-      box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+    .profile-content{
+      padding:34px;
     }
 
-    .btn-secondary {
-      background: white;
-      color: #111827;
-      border: 1px solid #d1d5db;
+    .profile-content h3{
+      font-size:28px;
+      margin-bottom:14px;
     }
 
-    .btn:hover {
-      transform: translateY(-4px);
+    .profile-content p{
+      line-height:1.8;
+      color:var(--gray);
+      margin-bottom:26px;
     }
 
-    .hero-right {
-      flex: 1;
-      min-width: 320px;
-      position: relative;
-      display: flex;
-      justify-content: center;
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
     }
 
-    .profile-card {
-      width: 430px;
-      background: white;
-      border-radius: 35px;
-      overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-      position: relative;
-      z-index: 5;
+    .stat-box{
+      background:#eff6ff;
+      padding:18px;
+      border-radius:20px;
+      text-align:center;
     }
 
-    .profile-card img {
-      height: 480px;
-      object-fit: cover;
+    .stat-box h4{
+      color:var(--primary);
+      font-size:24px;
+      margin-bottom:4px;
     }
 
-    .profile-content {
-      padding: 35px;
+    .stat-box p{
+      margin:0;
+      font-size:14px;
+      font-weight:600;
     }
 
-    .profile-content h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
+    /* =========================
+       SECTION TITLE
+    ========================== */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
     }
 
-    .profile-content p {
-      color: #6b7280;
-      line-height: 1.8;
-      margin-bottom: 25px;
+    .section-title h2{
+      font-size:56px;
+      margin-bottom:14px;
+      letter-spacing:-1px;
     }
 
-    .stats {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .section-title p{
+      color:var(--gray);
+      font-size:18px;
     }
+
+    /* =========================
+       ABOUT
+    ========================== */
 
-    .stat-box {
-      flex: 1;
-      min-width: 100px;
-      background: #eff6ff;
-      padding: 18px;
-      border-radius: 18px;
-      text-align: center;
+    .about{
+      background:white;
     }
 
-    .stat-box h4 {
-      color: #2563eb;
-      font-size: 24px;
-      margin-bottom: 5px;
+    .about-card{
+      background:#f8fbff;
+      border-radius:38px;
+      padding:60px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:50px;
+      align-items:center;
     }
 
-    .floating {
-      position: absolute;
-      border-radius: 50%;
-      z-index: 1;
+    .about-image img{
+      border-radius:30px;
+      height:420px;
+      object-fit:cover;
     }
 
-    .circle1 {
-      width: 220px;
-      height: 220px;
-      background: #dbeafe;
-      top: 100px;
-      right: 40px;
+    .about-content h3{
+      font-size:38px;
+      margin-bottom:20px;
     }
 
-    .circle2 {
-      width: 140px;
-      height: 140px;
-      background: #bfdbfe;
-      bottom: 100px;
-      left: 60px;
+    .about-content p{
+      color:var(--gray);
+      line-height:2;
+      margin-bottom:20px;
+      font-size:17px;
     }
 
-    /* ================= SECTION ================= */
+    /* =========================
+       SKILLS
+    ========================== */
 
-    section {
-      padding: 110px 0;
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:28px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 70px;
+    .skill-card{
+      background:white;
+      border-radius:32px;
+      padding:36px;
+      box-shadow:var(--shadow);
+      transition:0.3s;
     }
 
-    .section-title h2 {
-      font-size: 52px;
-      margin-bottom: 12px;
+    .skill-card:hover{
+      transform:translateY(-8px);
     }
 
-    .section-title p {
-      color: #6b7280;
-      font-size: 18px;
+    .skill-icon{
+      width:70px;
+      height:70px;
+      border-radius:20px;
+      background:#eff6ff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      margin-bottom:24px;
     }
 
-    /* ================= ABOUT ================= */
+    .skill-card h3{
+      font-size:26px;
+      margin-bottom:22px;
+    }
 
-    .about {
-      background: white;
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
-    .about-card {
-      background: #f9fbff;
-      border-radius: 35px;
-      padding: 50px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.05);
-      line-height: 2;
-      color: #4b5563;
-      font-size: 18px;
+    .tag{
+      padding:10px 16px;
+      background:#eff6ff;
+      color:var(--primary);
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
     }
 
-    /* ================= SKILLS ================= */
+    /* =========================
+       EXPERIENCE
+    ========================== */
+
+    .experience{
+      background:white;
+    }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 25px;
+    .timeline{
+      max-width:950px;
+      margin:auto;
+      position:relative;
     }
 
-    .skill-card {
-      background: white;
-      padding: 35px;
-      border-radius: 30px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.05);
-      transition: 0.3s;
+    .timeline::before{
+      content:'';
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:50%;
+      transform:translateX(-50%);
+      width:4px;
+      background:#dbeafe;
     }
 
-    .skill-card:hover {
-      transform: translateY(-8px);
+    .timeline-item{
+      width:50%;
+      padding:20px 40px;
+      position:relative;
     }
 
-    .skill-card h3 {
-      margin-bottom: 25px;
-      font-size: 24px;
+    .timeline-item:nth-child(odd){
+      left:0;
     }
 
-    .tags {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .timeline-item:nth-child(even){
+      left:50%;
     }
 
-    .tag {
-      padding: 10px 16px;
-      border-radius: 50px;
-      background: #eff6ff;
-      color: #2563eb;
-      font-size: 14px;
-      font-weight: 700;
+    .timeline-content{
+      background:#f8fbff;
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      position:relative;
     }
 
-    /* ================= EXPERIENCE ================= */
+    .timeline-content::before{
+      content:'';
+      position:absolute;
+      top:40px;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:var(--primary);
+    }
 
-    .timeline {
-      max-width: 900px;
-      margin: auto;
-      position: relative;
+    .timeline-item:nth-child(odd) .timeline-content::before{
+      right:-49px;
     }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      width: 4px;
-      background: #2563eb;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
+    .timeline-item:nth-child(even) .timeline-content::before{
+      left:-49px;
     }
 
-    .timeline-item {
-      position: relative;
-      width: 50%;
-      padding: 30px;
+    .timeline-content span{
+      color:var(--primary);
+      font-weight:800;
+      font-size:14px;
     }
 
-    .timeline-item:nth-child(odd) {
-      left: 0;
+    .timeline-content h3{
+      margin:12px 0;
+      font-size:28px;
     }
 
-    .timeline-item:nth-child(even) {
-      left: 50%;
+    .timeline-content p{
+      line-height:1.9;
+      color:var(--gray);
     }
 
-    .timeline-content {
-      background: white;
-      padding: 30px;
-      border-radius: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+      gap:32px;
     }
 
-    .timeline-content span {
-      color: #2563eb;
-      font-weight: 700;
+    .project-card{
+      background:white;
+      border-radius:34px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:0.35s;
     }
 
-    .timeline-content h3 {
-      margin: 12px 0;
+    .project-card:hover{
+      transform:translateY(-10px);
     }
 
-    .timeline-content p {
-      color: #6b7280;
-      line-height: 1.8;
+    .project-image{
+      position:relative;
+      overflow:hidden;
     }
 
-    /* ================= PROJECTS ================= */
+    .project-image img{
+      height:440px;
+      object-fit:cover;
+      transition:0.4s;
+    }
 
-    .projects {
-      background: white;
+    .project-card:hover img{
+      transform:scale(1.04);
     }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-      gap: 30px;
+    .project-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(15,23,42,0.75), transparent);
     }
 
-    .project-card {
-      background: #f9fbff;
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.05);
-      transition: 0.3s;
+    .project-content{
+      padding:28px;
     }
 
-    .project-card:hover {
-      transform: translateY(-8px);
+    .project-content h3{
+      font-size:28px;
+      margin-bottom:14px;
     }
 
-    .project-card img {
-      height: 240px;
-      object-fit: cover;
+    .project-content p{
+      color:var(--gray);
+      line-height:1.9;
+      margin-bottom:24px;
     }
 
-    .project-content {
-      padding: 30px;
+    .project-tags{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
     }
 
-    .project-content h3 {
-      margin-bottom: 15px;
-      font-size: 24px;
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact{
+      background:white;
     }
 
-    .project-content p {
-      color: #6b7280;
-      line-height: 1.9;
+    .contact-box{
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+      color:white;
+      padding:80px 60px;
+      border-radius:40px;
+      text-align:center;
+      box-shadow:var(--shadow);
     }
 
-    /* ================= CONTACT ================= */
+    .contact-box h2{
+      font-size:56px;
+      margin-bottom:20px;
+    }
 
-    .contact-box {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      padding: 70px;
-      border-radius: 35px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.05);
-      text-align: center;
+    .contact-box p{
+      max-width:760px;
+      margin:auto;
+      line-height:1.9;
+      color:#cbd5e1;
+      font-size:18px;
+      margin-bottom:40px;
     }
 
-    .contact-box h2 {
-      font-size: 52px;
-      margin-bottom: 20px;
+    .contact-buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:18px;
     }
 
-    .contact-box p {
-      color: #6b7280;
-      line-height: 1.9;
-      margin-bottom: 35px;
-      font-size: 18px;
+    .contact-buttons .btn-secondary{
+      background:rgba(255,255,255,0.08);
+      color:white;
+      border:1px solid rgba(255,255,255,0.12);
     }
+
+    /* =========================
+       FOOTER
+    ========================== */
 
-    footer {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 80px;
+    footer{
+      padding:40px 20px;
+      text-align:center;
+      color:#64748b;
+      font-weight:500;
     }
 
-    /* ================= MOBILE ================= */
+    /* =========================
+       RESPONSIVE
+    ========================== */
 
-    @media(max-width: 900px) {
+    @media(max-width:1000px){
 
-      .hero-left h1 {
-        font-size: 48px;
+      .hero-wrapper,
+      .about-card{
+        grid-template-columns:1fr;
       }
 
-      .hero-left h2 {
-        font-size: 24px;
+      .hero-left{
+        text-align:center;
       }
 
-      .nav-links {
-        display: none;
+      .hero-buttons{
+        justify-content:center;
       }
 
-      .timeline::before {
-        left: 20px;
+      .profile-card{
+        width:100%;
+        max-width:460px;
       }
 
-      .timeline-item {
-        width: 100%;
-        left: 0 !important;
-        padding-left: 60px;
+      .timeline::before{
+        left:20px;
       }
 
-      .profile-card {
-        width: 100%;
+      .timeline-item{
+        width:100%;
+        left:0 !important;
+        padding-left:60px;
+        padding-right:0;
       }
 
-      .contact-box {
-        padding: 40px 25px;
+      .timeline-content::before{
+        left:-49px !important;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      section{
+        padding:90px 0;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero-left h1{
+        font-size:52px;
+      }
+
+      .hero-left h2{
+        font-size:26px;
+      }
+
+      .section-title h2{
+        font-size:40px;
+      }
+
+      .contact-box{
+        padding:50px 28px;
+      }
+
+      .contact-box h2{
+        font-size:40px;
+      }
+
+      .about-card{
+        padding:30px;
       }
 
     }
 
   </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
+  <!-- =========================
+       NAVBAR
+  ========================== -->
 
   <nav>
+
     <div class="container nav-wrapper">
 
       <div class="logo">
+        <span>👨🏻‍💻</span>
         Mohit Gondaliya
       </div>
 
@@ -503,18 +738,23 @@
       </div>
 
     </div>
+
   </nav>
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
   <section class="hero">
 
-    <div class="floating circle1"></div>
-    <div class="floating circle2"></div>
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
 
     <div class="container hero-wrapper">
 
       <div class="hero-left">
+
+        <h4>Senior Mobile Engineer • iOS • Android • KMP</h4>
 
         <h1>
           Mohit <br>
@@ -522,13 +762,13 @@
         </h1>
 
         <h2>
-          Senior Mobile Engineer
+          Building Premium Mobile Experiences
         </h2>
 
         <p>
-          8+ years of experience building enterprise-grade iOS,
-          Android, and Kotlin Multiplatform applications for
-          fintech, logistics, banking, and scalable startup products.
+          Senior Mobile Engineer with 8+ years of experience
+          developing scalable iOS, Android, and Kotlin Multiplatform
+          applications for fintech, logistics, banking, and enterprise platforms.
         </p>
 
         <div class="hero-buttons">
@@ -542,7 +782,7 @@
           </a>
 
           <a href="#projects" class="btn btn-secondary">
-            My Projects
+            View Projects
           </a>
 
         </div>
@@ -553,25 +793,30 @@
 
         <div class="profile-card">
 
-          <!-- DUMMY PROFILE IMAGE -->
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Mohit Gondaliya">
+          <div class="profile-image">
+
+            <!-- REPLACE WITH YOUR IMAGE -->
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Mohit Gondaliya">
+
+            <div class="experience-badge">
+              <h3>8+</h3>
+              <p>Years Experience</p>
+            </div>
+
+          </div>
 
           <div class="profile-content">
 
             <h3>iOS • Android • KMP</h3>
 
             <p>
-              Specialized in SwiftUI, Jetpack Compose,
-              Kotlin Multiplatform, security architecture,
-              encryption workflows, and enterprise applications.
+              Specialized in SwiftUI, UIKit,
+              Jetpack Compose, Kotlin Multiplatform,
+              scalable architecture, encryption workflows,
+              and enterprise banking applications.
             </p>
 
             <div class="stats">
-
-              <div class="stat-box">
-                <h4>8+</h4>
-                <p>Years</p>
-              </div>
 
               <div class="stat-box">
                 <h4>20+</h4>
@@ -581,6 +826,11 @@
               <div class="stat-box">
                 <h4>KMP</h4>
                 <p>Expert</p>
+              </div>
+
+              <div class="stat-box">
+                <h4>100%</h4>
+                <p>Production</p>
               </div>
 
             </div>
@@ -595,7 +845,9 @@
 
   </section>
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================== -->
 
   <section class="about" id="about">
 
@@ -603,26 +855,44 @@
 
       <div class="section-title">
         <h2>About Me</h2>
-        <p>Professional summary and expertise</p>
+        <p>Professional Summary & Expertise</p>
       </div>
 
       <div class="about-card">
 
-        Results-driven Senior iOS Developer with 8 years of hands-on experience designing,
-        building, and shipping production-grade mobile applications across fintech,
-        fleet management, logistics, and e-commerce domains.
+        <div class="about-image">
 
-        <br><br>
+          <!-- REPLACE WITH YOUR IMAGE -->
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop" alt="About Mohit">
 
-        Expert in Swift, SwiftUI, Objective-C, Kotlin, and Kotlin Multiplatform.
-        Strong experience with UIKit, MVVM architecture, Combine, encryption,
-        WebView security, REST APIs, and enterprise mobility solutions.
+        </div>
 
-        <br><br>
+        <div class="about-content">
 
-        Currently working at Société Générale Global Solution Center in Bangalore,
-        where I contribute to enterprise banking applications with secure SwiftUI architecture
-        and modern engineering practices.
+          <h3>Senior Mobile Engineer</h3>
+
+          <p>
+            Results-driven Senior iOS Developer with extensive
+            experience designing, building, and shipping
+            production-grade mobile applications across
+            fintech, fleet management, logistics, and e-commerce domains.
+          </p>
+
+          <p>
+            Expert in Swift, SwiftUI, Objective-C, Kotlin,
+            Jetpack Compose, and Kotlin Multiplatform with
+            strong understanding of MVVM architecture,
+            REST APIs, Combine, Coroutines, security,
+            encryption, and scalable enterprise systems.
+          </p>
+
+          <p>
+            Currently working at Société Générale Global Solution Center,
+            contributing to secure enterprise banking solutions
+            with modern engineering practices and scalable mobile architecture.
+          </p>
+
+        </div>
 
       </div>
 
@@ -630,7 +900,9 @@
 
   </section>
 
-  <!-- SKILLS -->
+  <!-- =========================
+       SKILLS
+  ========================== -->
 
   <section id="skills">
 
@@ -638,12 +910,14 @@
 
       <div class="section-title">
         <h2>Technical Skills</h2>
-        <p>Technologies and frameworks I work with</p>
+        <p>Technologies & Frameworks</p>
       </div>
 
       <div class="skills-grid">
 
         <div class="skill-card">
+
+          <div class="skill-icon">🍎</div>
 
           <h3>iOS Development</h3>
 
@@ -652,38 +926,42 @@
             <div class="tag">SwiftUI</div>
             <div class="tag">UIKit</div>
             <div class="tag">Objective-C</div>
-            <div class="tag">CoreData</div>
             <div class="tag">Combine</div>
+            <div class="tag">CoreData</div>
           </div>
 
         </div>
 
         <div class="skill-card">
+
+          <div class="skill-icon">🤖</div>
 
           <h3>Android & KMP</h3>
 
           <div class="tags">
             <div class="tag">Kotlin</div>
-            <div class="tag">Jetpack Compose</div>
+            <div class="tag">Compose</div>
             <div class="tag">KMP</div>
             <div class="tag">Coroutines</div>
-            <div class="tag">Ktor</div>
             <div class="tag">Flow</div>
+            <div class="tag">Ktor</div>
           </div>
 
         </div>
 
         <div class="skill-card">
 
+          <div class="skill-icon">⚙️</div>
+
           <h3>Architecture & Tools</h3>
 
           <div class="tags">
             <div class="tag">MVVM</div>
-            <div class="tag">REST APIs</div>
             <div class="tag">Firebase</div>
+            <div class="tag">REST APIs</div>
             <div class="tag">AWS</div>
-            <div class="tag">Encryption</div>
             <div class="tag">Git</div>
+            <div class="tag">Encryption</div>
           </div>
 
         </div>
@@ -694,20 +972,23 @@
 
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- =========================
+       EXPERIENCE
+  ========================== -->
 
-  <section id="experience">
+  <section class="experience" id="experience">
 
     <div class="container">
 
       <div class="section-title">
         <h2>Work Experience</h2>
-        <p>Professional journey</p>
+        <p>Professional Journey</p>
       </div>
 
       <div class="timeline">
 
         <div class="timeline-item">
+
           <div class="timeline-content">
 
             <span>2023 - Present</span>
@@ -715,15 +996,17 @@
             <h3>Société Générale</h3>
 
             <p>
-              Specialist Software Engineer building secure banking
-              and enterprise mobile applications using SwiftUI,
-              encryption workflows, and scalable architecture.
+              Working as Specialist Software Engineer building secure
+              enterprise banking applications using SwiftUI,
+              encryption workflows, and scalable mobile architecture.
             </p>
 
           </div>
+
         </div>
 
         <div class="timeline-item">
+
           <div class="timeline-content">
 
             <span>2019 - 2023</span>
@@ -731,14 +1014,17 @@
             <h3>AppScrip</h3>
 
             <p>
-              Led iOS development teams and built scalable apps
-              for logistics, transport, grocery, and delivery domains.
+              Led mobile engineering initiatives and developed
+              scalable applications for logistics, transport,
+              grocery, and on-demand delivery platforms.
             </p>
 
           </div>
+
         </div>
 
         <div class="timeline-item">
+
           <div class="timeline-content">
 
             <span>2018 - 2019</span>
@@ -746,11 +1032,13 @@
             <h3>CrawlApps Technologies</h3>
 
             <p>
-              Developed client-focused iOS applications and improved
-              mobile UX through modern development practices.
+              Built client-focused iOS applications and improved
+              mobile experiences through modern development
+              practices and performance optimization.
             </p>
 
           </div>
+
         </div>
 
       </div>
@@ -759,39 +1047,65 @@
 
   </section>
 
-  <!-- PROJECTS -->
+  <!-- =========================
+       PROJECTS
+  ========================== -->
 
-  <section class="projects" id="projects">
+  <section id="projects">
 
     <div class="container">
 
       <div class="section-title">
         <h2>Featured Projects</h2>
-        <p>Enterprise and startup mobile applications</p>
+        <p>Enterprise & Startup Applications</p>
       </div>
 
-      <div class="project-grid">
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
 
         <div class="project-card">
 
-          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" alt="SG Markets">
+          <div class="project-image">
+
+            <!-- REPLACE WITH YOUR APP SCREENSHOT -->
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" alt="SG Markets">
+
+            <div class="project-overlay"></div>
+
+          </div>
 
           <div class="project-content">
 
             <h3>SG Markets</h3>
 
             <p>
-              Secure banking employee portal using SwiftUI,
-              encryption/decryption workflows, and enterprise-grade security.
+              Secure enterprise banking platform built with SwiftUI,
+              encryption workflows, and enterprise-grade mobile architecture.
             </p>
+
+            <div class="project-tags">
+              <div class="tag">SwiftUI</div>
+              <div class="tag">Security</div>
+              <div class="tag">Banking</div>
+            </div>
 
           </div>
 
         </div>
 
+        <!-- PROJECT 2 -->
+
         <div class="project-card">
 
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="My Ayvens India">
+          <div class="project-image">
+
+            <!-- REPLACE WITH YOUR APP SCREENSHOT -->
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop" alt="My Ayvens">
+
+            <div class="project-overlay"></div>
+
+          </div>
 
           <div class="project-content">
 
@@ -799,25 +1113,46 @@
 
             <p>
               Fleet management platform focused on scalability,
-              tracking systems, and enterprise mobile experiences.
+              vehicle tracking systems, and enterprise mobile workflows.
             </p>
+
+            <div class="project-tags">
+              <div class="tag">iOS</div>
+              <div class="tag">Enterprise</div>
+              <div class="tag">Tracking</div>
+            </div>
 
           </div>
 
         </div>
 
+        <!-- PROJECT 3 -->
+
         <div class="project-card">
 
-          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop" alt="Roadyo">
+          <div class="project-image">
+
+            <!-- REPLACE WITH YOUR APP SCREENSHOT -->
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Roadyo">
+
+            <div class="project-overlay"></div>
+
+          </div>
 
           <div class="project-content">
 
             <h3>Roadyo</h3>
 
             <p>
-              Hyperlocal ride-sharing and delivery platform with
-              driver management, GPS tracking, and real-time workflows.
+              Hyperlocal ride-sharing and delivery application with
+              GPS tracking, real-time workflows, and driver management.
             </p>
+
+            <div class="project-tags">
+              <div class="tag">Realtime</div>
+              <div class="tag">Maps</div>
+              <div class="tag">Logistics</div>
+            </div>
 
           </div>
 
@@ -829,24 +1164,24 @@
 
   </section>
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================== -->
 
-  <section id="contact">
+  <section class="contact" id="contact">
 
     <div class="container">
 
       <div class="contact-box">
 
-        <h2>
-          Let’s Build Something Great
-        </h2>
+        <h2>Let’s Build Something Great</h2>
 
         <p>
           Available for freelance projects, Kotlin Multiplatform consulting,
-          enterprise app development, and long-term mobile engineering collaborations.
+          enterprise application development, and long-term mobile engineering collaborations.
         </p>
 
-        <div class="hero-buttons" style="justify-content:center;">
+        <div class="contact-buttons">
 
           <a href="mailto:mohitgondaliya158@gmail.com" class="btn btn-primary">
             Contact Me
@@ -863,6 +1198,10 @@
     </div>
 
   </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
     © 2026 Mohit Gondaliya • Senior Mobile Engineer
