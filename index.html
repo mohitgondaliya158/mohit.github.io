@@ -1,1157 +1,776 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Mohit Gondaliya | Senior Mobile Engineer</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-
-    :root{
-      --primary:#2563eb;
-      --primary-light:#dbeafe;
-      --dark:#0f172a;
-      --gray:#64748b;
-      --light:#f8fafc;
-      --white:#ffffff;
-      --border:#e2e8f0;
-      --shadow:0 10px 40px rgba(15,23,42,0.08);
-      --radius:28px;
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:#f3f7fb;
-      color:var(--dark);
-      overflow-x:hidden;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    a{
-      text-decoration:none;
-    }
-
-    .container{
-      width:92%;
-      max-width:1280px;
-      margin:auto;
-    }
-
-    section{
-      padding:110px 0;
-    }
-
-    /* =========================
-       NAVBAR
-    ========================== */
-
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:999;
-      background:rgba(255,255,255,0.88);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(0,0,0,0.05);
-    }
-
-    .nav-wrapper{
-      height:84px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-size:30px;
-      font-weight:800;
-      color:var(--dark);
-    }
-
-    .logo span{
-      font-size:32px;
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:34px;
-    }
-
-    .nav-links a{
-      color:var(--dark);
-      font-weight:600;
-      transition:0.3s;
-    }
-
-    .nav-links a:hover{
-      color:var(--primary);
-    }
-
-    .contact-btn{
-      padding:13px 24px;
-      border-radius:999px;
-      border:2px solid var(--primary);
-      color:var(--primary) !important;
-    }
-
-    .contact-btn:hover{
-      background:var(--primary);
-      color:white !important;
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      position:relative;
-      padding-top:140px;
-      overflow:hidden;
-    }
-
-    .blur{
-      position:absolute;
-      border-radius:50%;
-      filter:blur(80px);
-      z-index:0;
-    }
-
-    .blur1{
-      width:280px;
-      height:280px;
-      background:#bfdbfe;
-      top:120px;
-      left:-50px;
-    }
-
-    .blur2{
-      width:260px;
-      height:260px;
-      background:#c7d2fe;
-      bottom:50px;
-      right:-80px;
-    }
-
-    .hero-wrapper{
-      display:grid;
-      grid-template-columns:1.1fr 1fr;
-      gap:70px;
-      align-items:center;
-      position:relative;
-      z-index:2;
-    }
-
-    .hero-left h4{
-      display:inline-block;
-      background:var(--primary-light);
-      color:var(--primary);
-      padding:10px 18px;
-      border-radius:999px;
-      font-size:14px;
-      margin-bottom:24px;
-      font-weight:700;
-    }
-
-    .hero-left h1{
-      font-size:78px;
-      line-height:1.05;
-      font-weight:900;
-      margin-bottom:18px;
-      letter-spacing:-2px;
-    }
-
-    .hero-left h2{
-      color:var(--primary);
-      font-size:34px;
-      margin-bottom:24px;
-      font-weight:700;
-    }
-
-    .hero-left p{
-      font-size:18px;
-      line-height:1.9;
-      color:var(--gray);
-      max-width:700px;
-      margin-bottom:40px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-    }
-
-    .btn{
-      padding:16px 28px;
-      border-radius:16px;
-      font-weight:700;
-      transition:0.3s;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .btn:hover{
-      transform:translateY(-5px);
-    }
-
-    .btn-primary{
-      background:var(--primary);
-      color:white;
-      box-shadow:0 12px 30px rgba(37,99,235,0.28);
-    }
-
-    .btn-secondary{
-      background:white;
-      border:1px solid var(--border);
-      color:var(--dark);
-    }
-
-    /* =========================
-       HERO CARD
-    ========================== */
-
-    .hero-right{
-      position:relative;
-      display:flex;
-      justify-content:center;
-    }
-
-    .profile-card{
-      width:440px;
-      background:white;
-      border-radius:38px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      position:relative;
-      z-index:3;
-    }
-
-    .profile-image{
-      position:relative;
-    }
-
-    .profile-image img{
-      height:520px;
-      object-fit:cover;
-    }
-
-    .experience-badge{
-      position:absolute;
-      bottom:20px;
-      right:20px;
-      background:white;
-      padding:18px 22px;
-      border-radius:20px;
-      box-shadow:var(--shadow);
-    }
-
-    .experience-badge h3{
-      font-size:28px;
-      color:var(--primary);
-      margin-bottom:4px;
-    }
-
-    .experience-badge p{
-      color:var(--gray);
-      font-size:14px;
-      font-weight:600;
-    }
-
-    .profile-content{
-      padding:34px;
-    }
-
-    .profile-content h3{
-      font-size:28px;
-      margin-bottom:14px;
-    }
-
-    .profile-content p{
-      line-height:1.8;
-      color:var(--gray);
-      margin-bottom:26px;
-    }
-
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-
-    .stat-box{
-      background:#eff6ff;
-      padding:18px;
-      border-radius:20px;
-      text-align:center;
-    }
-
-    .stat-box h4{
-      color:var(--primary);
-      font-size:24px;
-      margin-bottom:4px;
-    }
-
-    .stat-box p{
-      margin:0;
-      font-size:14px;
-      font-weight:600;
-    }
-
-    /* =========================
-       SECTION TITLE
-    ========================== */
-
-    .section-title{
-      text-align:center;
-      margin-bottom:70px;
-    }
-
-    .section-title h2{
-      font-size:56px;
-      margin-bottom:14px;
-      letter-spacing:-1px;
-    }
-
-    .section-title p{
-      color:var(--gray);
-      font-size:18px;
-    }
-
-    /* =========================
-       ABOUT
-    ========================== */
-
-    .about{
-      background:white;
-    }
-
-    .about-card{
-      background:#f8fbff;
-      border-radius:38px;
-      padding:60px;
-      box-shadow:var(--shadow);
-      display:grid;
-      grid-template-columns:320px 1fr;
-      gap:50px;
-      align-items:center;
-    }
-
-    .about-image img{
-      border-radius:30px;
-      height:420px;
-      object-fit:cover;
-    }
-
-    .about-content h3{
-      font-size:38px;
-      margin-bottom:20px;
-    }
-
-    .about-content p{
-      color:var(--gray);
-      line-height:2;
-      margin-bottom:20px;
-      font-size:17px;
-    }
-
-    /* =========================
-       SKILLS
-    ========================== */
-
-    .skills-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:28px;
-    }
-
-    .skill-card{
-      background:white;
-      border-radius:32px;
-      padding:36px;
-      box-shadow:var(--shadow);
-      transition:0.3s;
-    }
-
-    .skill-card:hover{
-      transform:translateY(-8px);
-    }
-
-    .skill-icon{
-      width:70px;
-      height:70px;
-      border-radius:20px;
-      background:#eff6ff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:30px;
-      margin-bottom:24px;
-    }
-
-    .skill-card h3{
-      font-size:26px;
-      margin-bottom:22px;
-    }
-
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .tag{
-      padding:10px 16px;
-      background:#eff6ff;
-      color:var(--primary);
-      border-radius:999px;
-      font-size:14px;
-      font-weight:700;
-    }
-
-    /* =========================
-       EXPERIENCE
-    ========================== */
-
-    .experience{
-      background:white;
-    }
-
-    .timeline{
-      max-width:950px;
-      margin:auto;
-      position:relative;
-    }
-
-    .timeline::before{
-      content:'';
-      position:absolute;
-      top:0;
-      bottom:0;
-      left:50%;
-      transform:translateX(-50%);
-      width:4px;
-      background:#dbeafe;
-    }
-
-    .timeline-item{
-      width:50%;
-      padding:20px 40px;
-      position:relative;
-    }
-
-    .timeline-item:nth-child(odd){
-      left:0;
-    }
-
-    .timeline-item:nth-child(even){
-      left:50%;
-    }
-
-    .timeline-content{
-      background:#f8fbff;
-      border-radius:28px;
-      padding:30px;
-      box-shadow:var(--shadow);
-      position:relative;
-    }
-
-    .timeline-content::before{
-      content:'';
-      position:absolute;
-      top:40px;
-      width:18px;
-      height:18px;
-      border-radius:50%;
-      background:var(--primary);
-    }
-
-    .timeline-item:nth-child(odd) .timeline-content::before{
-      right:-49px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content::before{
-      left:-49px;
-    }
-
-    .timeline-content span{
-      color:var(--primary);
-      font-weight:800;
-      font-size:14px;
-    }
-
-    .timeline-content h3{
-      margin:12px 0;
-      font-size:28px;
-    }
-
-    .timeline-content p{
-      line-height:1.9;
-      color:var(--gray);
-    }
-
-    /* =========================
-       PROJECTS
-    ========================== */
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-      gap:32px;
-    }
-
-    .project-card{
-      background:white;
-      border-radius:34px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      transition:0.35s;
-    }
-
-    .project-card:hover{
-      transform:translateY(-10px);
-    }
-
-    .project-image{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .project-image img{
-      height:440px;
-      object-fit:cover;
-      transition:0.4s;
-    }
-
-    .project-card:hover img{
-      transform:scale(1.04);
-    }
-
-    .project-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top, rgba(15,23,42,0.75), transparent);
-    }
-
-    .project-content{
-      padding:28px;
-    }
-
-    .project-content h3{
-      font-size:28px;
-      margin-bottom:14px;
-    }
-
-    .project-content p{
-      color:var(--gray);
-      line-height:1.9;
-      margin-bottom:24px;
-    }
-
-    .project-tags{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
-
-    .contact{
-      background:white;
-    }
-
-    .contact-box{
-      background:linear-gradient(135deg,#0f172a,#1e293b);
-      color:white;
-      padding:80px 60px;
-      border-radius:40px;
-      text-align:center;
-      box-shadow:var(--shadow);
-    }
-
-    .contact-box h2{
-      font-size:56px;
-      margin-bottom:20px;
-    }
-
-    .contact-box p{
-      max-width:760px;
-      margin:auto;
-      line-height:1.9;
-      color:#cbd5e1;
-      font-size:18px;
-      margin-bottom:40px;
-    }
-
-    .contact-buttons{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:18px;
-    }
-
-    .contact-buttons .btn-secondary{
-      background:rgba(255,255,255,0.08);
-      color:white;
-      border:1px solid rgba(255,255,255,0.12);
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    footer{
-      padding:40px 20px;
-      text-align:center;
-      color:#64748b;
-      font-weight:500;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
-
-    @media(max-width:1000px){
-
-      .hero-wrapper,
-      .about-card{
-        grid-template-columns:1fr;
-      }
-
-      .hero-left{
-        text-align:center;
-      }
-
-      .hero-buttons{
-        justify-content:center;
-      }
-
-      .profile-card{
-        width:100%;
-        max-width:460px;
-      }
-
-      .timeline::before{
-        left:20px;
-      }
-
-      .timeline-item{
-        width:100%;
-        left:0 !important;
-        padding-left:60px;
-        padding-right:0;
-      }
-
-      .timeline-content::before{
-        left:-49px !important;
-      }
-
-    }
-
-    @media(max-width:768px){
-
-      section{
-        padding:90px 0;
-      }
-
-      .nav-links{
-        display:none;
-      }
-
-      .hero-left h1{
-        font-size:52px;
-      }
-
-      .hero-left h2{
-        font-size:26px;
-      }
-
-      .section-title h2{
-        font-size:40px;
-      }
-
-      .contact-box{
-        padding:50px 28px;
-      }
-
-      .contact-box h2{
-        font-size:40px;
-      }
-
-      .about-card{
-        padding:30px;
-      }
-
-    }
-
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Mohit Gondaliya | Senior Mobile Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --primary:#2563eb;
+  --secondary:#7c3aed;
+  --dark:#0f172a;
+  --gray:#64748b;
+  --light:#f8fafc;
+  --white:#ffffff;
+  --border:#e2e8f0;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f4f7fb;
+  color:var(--dark);
+  overflow-x:hidden;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+}
+
+.container{
+  width:90%;
+  max-width:1250px;
+  margin:auto;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:999;
+  background:rgba(255,255,255,0.82);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.nav-wrapper{
+  height:85px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:32px;
+  font-weight:900;
+  color:var(--dark);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:35px;
+}
+
+.nav-links a{
+  color:var(--dark);
+  font-weight:600;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+.contact-btn{
+  padding:13px 24px;
+  border-radius:50px;
+  border:2px solid var(--primary);
+  color:var(--primary)!important;
+}
+
+.contact-btn:hover{
+  background:var(--primary);
+  color:white!important;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding-top:130px;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:linear-gradient(135deg,#2563eb20,#7c3aed20);
+  border-radius:50%;
+  top:-250px;
+  right:-200px;
+  filter:blur(50px);
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  width:450px;
+  height:450px;
+  background:linear-gradient(135deg,#06b6d420,#2563eb20);
+  border-radius:50%;
+  bottom:-220px;
+  left:-120px;
+  filter:blur(60px);
+}
+
+.hero-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.hero-left h4{
+  display:inline-block;
+  background:#dbeafe;
+  color:var(--primary);
+  padding:10px 20px;
+  border-radius:50px;
+  margin-bottom:25px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.hero-left h1{
+  font-size:82px;
+  line-height:1.05;
+  font-weight:900;
+  margin-bottom:20px;
+}
+
+.hero-left h2{
+  font-size:34px;
+  color:var(--primary);
+  margin-bottom:28px;
+}
+
+.hero-left p{
+  font-size:18px;
+  line-height:1.9;
+  color:var(--gray);
+  margin-bottom:40px;
+  max-width:650px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 30px;
+  border-radius:16px;
+  font-weight:700;
+  transition:0.3s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  box-shadow:0 12px 30px rgba(37,99,235,0.3);
+}
+
+.btn-secondary{
+  background:white;
+  border:1px solid var(--border);
+  color:var(--dark);
+}
+
+/* ================= PROFILE CARD ================= */
+
+.hero-right{
+  display:flex;
+  justify-content:center;
+  position:relative;
+}
+
+.profile-card{
+  width:450px;
+  background:white;
+  border-radius:35px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(15,23,42,0.12);
+  position:relative;
+}
+
+.profile-image{
+  position:relative;
+}
+
+.profile-image img{
+  height:520px;
+  object-fit:cover;
+}
+
+.floating-badge{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  background:white;
+  padding:18px 22px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.floating-badge h3{
+  font-size:28px;
+  color:var(--primary);
+}
+
+.floating-badge p{
+  font-size:14px;
+  color:var(--gray);
+  font-weight:600;
+}
+
+.profile-content{
+  padding:35px;
+}
+
+.profile-content h3{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.profile-content p{
+  color:var(--gray);
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.stat-box{
+  background:#eff6ff;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.stat-box h4{
+  color:var(--primary);
+  font-size:26px;
+  margin-bottom:5px;
+}
+
+.stat-box p{
+  margin:0;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* ================= SECTION TITLE ================= */
+
+section{
+  padding:110px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-size:56px;
+  margin-bottom:14px;
+}
+
+.section-title p{
+  color:var(--gray);
+  font-size:18px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+  background:white;
+}
+
+.about-card{
+  display:grid;
+  grid-template-columns:350px 1fr;
+  gap:50px;
+  align-items:center;
+  background:#f8fbff;
+  border-radius:35px;
+  padding:50px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.05);
+}
+
+.about-card img{
+  border-radius:28px;
+  height:420px;
+  object-fit:cover;
+}
+
+.about-content h3{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.about-content p{
+  color:var(--gray);
+  line-height:2;
+  margin-bottom:20px;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.skill-card{
+  background:white;
+  border-radius:30px;
+  padding:35px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.skill-card:hover{
+  transform:translateY(-10px);
+}
+
+.skill-icon{
+  width:70px;
+  height:70px;
+  border-radius:20px;
+  background:#eff6ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  margin-bottom:24px;
+}
+
+.skill-card h3{
+  margin-bottom:22px;
+  font-size:26px;
+}
+
+.tags{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.tag{
+  padding:10px 16px;
+  border-radius:50px;
+  background:#eff6ff;
+  color:var(--primary);
+  font-size:14px;
+  font-weight:700;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience{
+  background:white;
+}
+
+.timeline{
+  max-width:900px;
+  margin:auto;
+  position:relative;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  width:4px;
+  background:#dbeafe;
+  top:0;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.timeline-item{
+  width:50%;
+  padding:25px 40px;
+  position:relative;
+}
+
+.timeline-item:nth-child(odd){
+  left:0;
+}
+
+.timeline-item:nth-child(even){
+  left:50%;
+}
+
+.timeline-content{
+  background:#f8fbff;
+  padding:30px;
+  border-radius:28px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  position:relative;
+}
+
+.timeline-content::before{
+  content:'';
+  position:absolute;
+  top:38px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:var(--primary);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before{
+  right:-49px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before{
+  left:-49px;
+}
+
+.timeline-content span{
+  color:var(--primary);
+  font-weight:800;
+}
+
+.timeline-content h3{
+  margin:12px 0;
+  font-size:28px;
+}
+
+.timeline-content p{
+  color:var(--gray);
+  line-height:1.9;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:30px;
+}
+
+.project-card{
+  background:white;
+  border-radius:35px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:0.35s;
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+}
+
+.project-image{
+  position:relative;
+  overflow:hidden;
+}
+
+.project-image img{
+  height:500px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.project-card:hover img{
+  transform:scale(1.05);
+}
+
+.project-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(15,23,42,0.75),transparent);
+}
+
+.project-content{
+  padding:30px;
+}
+
+.project-content h3{
+  font-size:28px;
+  margin-bottom:14px;
+}
+
+.project-content p{
+  color:var(--gray);
+  line-height:1.9;
+  margin-bottom:22px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+  background:white;
+}
+
+.contact-box{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:white;
+  padding:90px 60px;
+  border-radius:40px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,0.1);
+}
+
+.contact-box h2{
+  font-size:58px;
+  margin-bottom:20px;
+}
+
+.contact-box p{
+  max-width:750px;
+  margin:auto;
+  line-height:1.9;
+  color:#cbd5e1;
+  margin-bottom:40px;
+  font-size:18px;
+}
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.contact-buttons .btn-secondary{
+  background:rgba(255,255,255,0.08);
+  color:white;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--gray);
+  font-weight:600;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+  .hero-wrapper,
+  .about-card{
+    grid-template-columns:1fr;
+  }
+
+  .hero-left{
+    text-align:center;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .profile-card{
+    width:100%;
+    max-width:460px;
+  }
+
+  .timeline::before{
+    left:20px;
+  }
+
+  .timeline-item{
+    width:100%;
+    left:0!important;
+    padding-left:60px;
+    padding-right:0;
+  }
+
+  .timeline-content::before{
+    left:-49px!important;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero-left h1{
+    font-size:54px;
+  }
+
+  .hero-left h2{
+    font-size:28px;
+  }
+
+  .section-title h2{
+    font-size:42px;
+  }
+
+  .contact-box{
+    padding:50px 25px;
+  }
+
+  .contact-box h2{
+    font-size:42px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       NAVBAR
-  ========================== -->
+<!-- ================= NAVBAR ================= -->
 
-  <nav>
+<nav>
 
-    <div class="container nav-wrapper">
+  <div class="container nav-wrapper">
 
-      <div class="logo">
-        <span>👨🏻‍💻</span>
-        Mohit Gondaliya
-      </div>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact" class="contact-btn">Contact</a>
-      </div>
-
+    <div class="logo">
+      👨🏻‍💻 Mohit
     </div>
 
-  </nav>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="contact-btn">Contact</a>
+    </div>
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  </div>
 
-  <section class="hero">
+</nav>
 
-    <div class="blur blur1"></div>
-    <div class="blur blur2"></div>
+<!-- ================= HERO ================= -->
 
-    <div class="container hero-wrapper">
+<section class="hero">
 
-      <div class="hero-left">
+  <div class="container hero-wrapper">
 
-        <h4>Senior Mobile Engineer • iOS • Android • KMP</h4>
+    <div class="hero-left">
 
-        <h1>
-          Mohit <br>
-          Gondaliya
-        </h1>
+      <h4>Senior Mobile Engineer • iOS • Android • KMP</h4>
 
-        <h2>
-          Building Premium Mobile Experiences
-        </h2>
+      <h1>
+        Mohit <br>
+        Gondaliya
+      </h1>
 
-        <p>
-          Senior Mobile Engineer with 8+ years of experience
-          developing scalable iOS, Android, and Kotlin Multiplatform
-          applications for fintech, logistics, banking, and enterprise platforms.
-        </p>
+      <h2>
+        Building Premium Mobile Applications
+      </h2>
 
-        <div class="hero-buttons">
+      <p>
+        8+ years of experience building scalable enterprise-grade
+        iOS, Android, and Kotlin Multiplatform applications
+        for banking, fintech, logistics, and startup ecosystems.
+      </p>
 
-          <a href="mailto:mohitgondaliya158@gmail.com" class="btn btn-primary">
-            Hire Me
-          </a>
+      <div class="hero-buttons">
 
-          <a href="https://linkedin.com/in/mohitgondaliya" target="_blank" class="btn btn-secondary">
-            LinkedIn
-          </a>
+        <a href="mailto:mohitgondaliya158@gmail.com" class="btn btn-primary">
+          Hire Me
+        </a>
 
-          <a href="#projects" class="btn btn-secondary">
-            View Projects
-          </a>
+        <a href="https://linkedin.com/in/mohitgondaliya" target="_blank" class="btn btn-secondary">
+          LinkedIn
+        </a>
 
-        </div>
-
-      </div>
-
-      <div class="hero-right">
-
-        <div class="profile-card">
-
-          <div class="profile-image">
-
-            <!-- REPLACE WITH YOUR IMAGE -->
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Mohit Gondaliya">
-
-            <div class="experience-badge">
-              <h3>8+</h3>
-              <p>Years Experience</p>
-            </div>
-
-          </div>
-
-          <div class="profile-content">
-
-            <h3>iOS • Android • KMP</h3>
-
-            <p>
-              Specialized in SwiftUI, UIKit,
-              Jetpack Compose, Kotlin Multiplatform,
-              scalable architecture, encryption workflows,
-              and enterprise banking applications.
-            </p>
-
-            <div class="stats">
-
-              <div class="stat-box">
-                <h4>20+</h4>
-                <p>Apps</p>
-              </div>
-
-              <div class="stat-box">
-                <h4>KMP</h4>
-                <p>Expert</p>
-              </div>
-
-              <div class="stat-box">
-                <h4>100%</h4>
-                <p>Production</p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
+        <a href="#projects" class="btn btn-secondary">
+          View Projects
+        </a>
 
       </div>
 
     </div>
 
-  </section>
+    <div class="hero-right">
 
-  <!-- =========================
-       ABOUT
-  ========================== -->
+      <div class="profile-card">
 
-  <section class="about" id="about">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>About Me</h2>
-        <p>Professional Summary & Expertise</p>
-      </div>
-
-      <div class="about-card">
-
-        <div class="about-image">
+        <div class="profile-image">
 
           <!-- REPLACE WITH YOUR IMAGE -->
-          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop" alt="About Mohit">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Mohit">
+
+          <div class="floating-badge">
+            <h3>8+</h3>
+            <p>Years Experience</p>
+          </div>
 
         </div>
 
-        <div class="about-content">
+        <div class="profile-content">
 
-          <h3>Senior Mobile Engineer</h3>
+          <h3>SwiftUI • KMP • Compose</h3>
 
           <p>
-            Results-driven Senior iOS Developer with extensive
-            experience designing, building, and shipping
-            production-grade mobile applications across
-            fintech, fleet management, logistics, and e-commerce domains.
+            Specialized in enterprise architecture,
+            Kotlin Multiplatform, SwiftUI,
+            scalable mobile systems,
+            and secure banking applications.
           </p>
 
-          <p>
-            Expert in Swift, SwiftUI, Objective-C, Kotlin,
-            Jetpack Compose, and Kotlin Multiplatform with
-            strong understanding of MVVM architecture,
-            REST APIs, Combine, Coroutines, security,
-            encryption, and scalable enterprise systems.
-          </p>
-
-          <p>
-            Currently working at Société Générale Global Solution Center,
-            contributing to secure enterprise banking solutions
-            with modern engineering practices and scalable mobile architecture.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- =========================
-       SKILLS
-  ========================== -->
-
-  <section id="skills">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Technical Skills</h2>
-        <p>Technologies & Frameworks</p>
-      </div>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-
-          <div class="skill-icon">🍎</div>
-
-          <h3>iOS Development</h3>
-
-          <div class="tags">
-            <div class="tag">Swift</div>
-            <div class="tag">SwiftUI</div>
-            <div class="tag">UIKit</div>
-            <div class="tag">Objective-C</div>
-            <div class="tag">Combine</div>
-            <div class="tag">CoreData</div>
-          </div>
-
-        </div>
-
-        <div class="skill-card">
-
-          <div class="skill-icon">🤖</div>
-
-          <h3>Android & KMP</h3>
-
-          <div class="tags">
-            <div class="tag">Kotlin</div>
-            <div class="tag">Compose</div>
-            <div class="tag">KMP</div>
-            <div class="tag">Coroutines</div>
-            <div class="tag">Flow</div>
-            <div class="tag">Ktor</div>
-          </div>
-
-        </div>
-
-        <div class="skill-card">
-
-          <div class="skill-icon">⚙️</div>
-
-          <h3>Architecture & Tools</h3>
-
-          <div class="tags">
-            <div class="tag">MVVM</div>
-            <div class="tag">Firebase</div>
-            <div class="tag">REST APIs</div>
-            <div class="tag">AWS</div>
-            <div class="tag">Git</div>
-            <div class="tag">Encryption</div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- =========================
-       EXPERIENCE
-  ========================== -->
-
-  <section class="experience" id="experience">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Work Experience</h2>
-        <p>Professional Journey</p>
-      </div>
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-
-          <div class="timeline-content">
-
-            <span>2023 - Present</span>
-
-            <h3>Société Générale</h3>
-
-            <p>
-              Working as Specialist Software Engineer building secure
-              enterprise banking applications using SwiftUI,
-              encryption workflows, and scalable mobile architecture.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="timeline-item">
-
-          <div class="timeline-content">
-
-            <span>2019 - 2023</span>
-
-            <h3>AppScrip</h3>
-
-            <p>
-              Led mobile engineering initiatives and developed
-              scalable applications for logistics, transport,
-              grocery, and on-demand delivery platforms.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="timeline-item">
-
-          <div class="timeline-content">
-
-            <span>2018 - 2019</span>
-
-            <h3>CrawlApps Technologies</h3>
-
-            <p>
-              Built client-focused iOS applications and improved
-              mobile experiences through modern development
-              practices and performance optimization.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- =========================
-       PROJECTS
-  ========================== -->
-
-  <section id="projects">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Featured Projects</h2>
-        <p>Enterprise & Startup Applications</p>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- PROJECT 1 -->
-
-        <div class="project-card">
-
-          <div class="project-image">
-
-            <!-- REPLACE WITH YOUR APP SCREENSHOT -->
-            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" alt="SG Markets">
-
-            <div class="project-overlay"></div>
-
-          </div>
-
-          <div class="project-content">
-
-            <h3>SG Markets</h3>
-
-            <p>
-              Secure enterprise banking platform built with SwiftUI,
-              encryption workflows, and enterprise-grade mobile architecture.
-            </p>
-
-            <div class="project-tags">
-              <div class="tag">SwiftUI</div>
-              <div class="tag">Security</div>
-              <div class="tag">Banking</div>
+          <div class="stats">
+
+            <div class="stat-box">
+              <h4>20+</h4>
+              <p>Apps</p>
             </div>
 
-          </div>
-
-        </div>
-
-        <!-- PROJECT 2 -->
-
-        <div class="project-card">
-
-          <div class="project-image">
-
-            <!-- REPLACE WITH YOUR APP SCREENSHOT -->
-            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop" alt="My Ayvens">
-
-            <div class="project-overlay"></div>
-
-          </div>
-
-          <div class="project-content">
-
-            <h3>My Ayvens India</h3>
-
-            <p>
-              Fleet management platform focused on scalability,
-              vehicle tracking systems, and enterprise mobile workflows.
-            </p>
-
-            <div class="project-tags">
-              <div class="tag">iOS</div>
-              <div class="tag">Enterprise</div>
-              <div class="tag">Tracking</div>
+            <div class="stat-box">
+              <h4>KMP</h4>
+              <p>Expert</p>
             </div>
 
-          </div>
-
-        </div>
-
-        <!-- PROJECT 3 -->
-
-        <div class="project-card">
-
-          <div class="project-image">
-
-            <!-- REPLACE WITH YOUR APP SCREENSHOT -->
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Roadyo">
-
-            <div class="project-overlay"></div>
-
-          </div>
-
-          <div class="project-content">
-
-            <h3>Roadyo</h3>
-
-            <p>
-              Hyperlocal ride-sharing and delivery application with
-              GPS tracking, real-time workflows, and driver management.
-            </p>
-
-            <div class="project-tags">
-              <div class="tag">Realtime</div>
-              <div class="tag">Maps</div>
-              <div class="tag">Logistics</div>
+            <div class="stat-box">
+              <h4>100%</h4>
+              <p>Production</p>
             </div>
 
           </div>
@@ -1162,34 +781,187 @@
 
     </div>
 
-  </section>
+  </div>
 
-  <!-- =========================
-       CONTACT
-  ========================== -->
+</section>
 
-  <section class="contact" id="contact">
+<!-- ================= ABOUT ================= -->
 
-    <div class="container">
+<section class="about" id="about">
 
-      <div class="contact-box">
+  <div class="container">
 
-        <h2>Let’s Build Something Great</h2>
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Professional Summary</p>
+    </div>
+
+    <div class="about-card">
+
+      <!-- REPLACE IMAGE -->
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop" alt="Mohit">
+
+      <div class="about-content">
+
+        <h3>Senior Mobile Engineer</h3>
 
         <p>
-          Available for freelance projects, Kotlin Multiplatform consulting,
-          enterprise application development, and long-term mobile engineering collaborations.
+          Results-driven Senior iOS Developer with strong expertise
+          in building modern, scalable, and production-ready
+          applications across fintech, logistics, enterprise mobility,
+          and e-commerce domains.
         </p>
 
-        <div class="contact-buttons">
+        <p>
+          Expert in Swift, SwiftUI, Objective-C, Kotlin,
+          Jetpack Compose, Kotlin Multiplatform,
+          MVVM architecture, Firebase,
+          REST APIs, encryption workflows,
+          and enterprise mobile systems.
+        </p>
 
-          <a href="mailto:mohitgondaliya158@gmail.com" class="btn btn-primary">
-            Contact Me
-          </a>
+        <p>
+          Currently contributing to secure enterprise banking
+          applications at Société Générale Global Solution Center.
+        </p>
 
-          <a href="https://linkedin.com/in/mohitgondaliya" target="_blank" class="btn btn-secondary">
-            LinkedIn
-          </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Technical Skills</h2>
+      <p>Technologies & Frameworks</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+
+        <div class="skill-icon">🍎</div>
+
+        <h3>iOS Development</h3>
+
+        <div class="tags">
+          <div class="tag">Swift</div>
+          <div class="tag">SwiftUI</div>
+          <div class="tag">UIKit</div>
+          <div class="tag">Objective-C</div>
+          <div class="tag">Combine</div>
+        </div>
+
+      </div>
+
+      <div class="skill-card">
+
+        <div class="skill-icon">🤖</div>
+
+        <h3>Android & KMP</h3>
+
+        <div class="tags">
+          <div class="tag">Kotlin</div>
+          <div class="tag">Compose</div>
+          <div class="tag">KMP</div>
+          <div class="tag">Coroutines</div>
+          <div class="tag">Flow</div>
+        </div>
+
+      </div>
+
+      <div class="skill-card">
+
+        <div class="skill-icon">⚙️</div>
+
+        <h3>Architecture & Tools</h3>
+
+        <div class="tags">
+          <div class="tag">MVVM</div>
+          <div class="tag">Firebase</div>
+          <div class="tag">AWS</div>
+          <div class="tag">Git</div>
+          <div class="tag">REST APIs</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="experience" id="experience">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Experience</h2>
+      <p>Professional Journey</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <span>2023 - Present</span>
+
+          <h3>Société Générale</h3>
+
+          <p>
+            Developing secure enterprise banking applications
+            using SwiftUI, modern architecture,
+            encryption workflows, and scalable systems.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <span>2019 - 2023</span>
+
+          <h3>AppScrip</h3>
+
+          <p>
+            Led mobile app development for logistics,
+            grocery delivery, transport,
+            and scalable startup applications.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <span>2018 - 2019</span>
+
+          <h3>CrawlApps Technologies</h3>
+
+          <p>
+            Built modern iOS applications
+            and improved mobile user experience
+            with scalable architecture patterns.
+          </p>
 
         </div>
 
@@ -1197,15 +969,164 @@
 
     </div>
 
-  </section>
+  </div>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+</section>
 
-  <footer>
-    © 2026 Mohit Gondaliya • Senior Mobile Engineer
-  </footer>
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+      <p>Enterprise & Startup Applications</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+
+      <div class="project-card">
+
+        <div class="project-image">
+
+          <!-- REPLACE WITH APP SCREENSHOT -->
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" alt="SG Markets">
+
+          <div class="project-overlay"></div>
+
+        </div>
+
+        <div class="project-content">
+
+          <h3>SG Markets</h3>
+
+          <p>
+            Secure banking employee portal
+            using SwiftUI, enterprise security,
+            and encrypted workflows.
+          </p>
+
+          <div class="tags">
+            <div class="tag">SwiftUI</div>
+            <div class="tag">Security</div>
+            <div class="tag">Banking</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 2 -->
+
+      <div class="project-card">
+
+        <div class="project-image">
+
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop" alt="Ayvens">
+
+          <div class="project-overlay"></div>
+
+        </div>
+
+        <div class="project-content">
+
+          <h3>My Ayvens India</h3>
+
+          <p>
+            Enterprise fleet management platform
+            with tracking systems and scalable
+            mobile experiences.
+          </p>
+
+          <div class="tags">
+            <div class="tag">Enterprise</div>
+            <div class="tag">Tracking</div>
+            <div class="tag">iOS</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 3 -->
+
+      <div class="project-card">
+
+        <div class="project-image">
+
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Roadyo">
+
+          <div class="project-overlay"></div>
+
+        </div>
+
+        <div class="project-content">
+
+          <h3>Roadyo</h3>
+
+          <p>
+            Ride-sharing and logistics platform
+            with GPS tracking, real-time updates,
+            and delivery workflows.
+          </p>
+
+          <div class="tags">
+            <div class="tag">Realtime</div>
+            <div class="tag">Maps</div>
+            <div class="tag">Logistics</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2>Let’s Build Something Great</h2>
+
+      <p>
+        Available for freelance projects,
+        Kotlin Multiplatform consulting,
+        enterprise app development,
+        and long-term engineering collaborations.
+      </p>
+
+      <div class="contact-buttons">
+
+        <a href="mailto:mohitgondaliya158@gmail.com" class="btn btn-primary">
+          Contact Me
+        </a>
+
+        <a href="https://linkedin.com/in/mohitgondaliya" target="_blank" class="btn btn-secondary">
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Mohit Gondaliya • Senior Mobile Engineer
+</footer>
 
 </body>
 </html>
