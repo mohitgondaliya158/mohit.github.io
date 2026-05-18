@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Mohit Gondaliya | Senior Mobile Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mohit Gondaliya | KMP Mobile Engineer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +60,7 @@ nav{
   top:0;
   width:100%;
   z-index:999;
-  background:rgba(255,255,255,0.82);
+  background:rgba(255,255,255,0.85);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(0,0,0,0.05);
 }
@@ -72,7 +73,7 @@ nav{
 }
 
 .logo{
-  font-size:32px;
+  font-size:30px;
   font-weight:900;
   color:var(--dark);
 }
@@ -80,13 +81,13 @@ nav{
 .nav-links{
   display:flex;
   align-items:center;
-  gap:35px;
+  gap:30px;
 }
 
 .nav-links a{
   color:var(--dark);
   font-weight:600;
-  transition:0.3s;
+  transition:.3s;
 }
 
 .nav-links a:hover{
@@ -94,7 +95,7 @@ nav{
 }
 
 .contact-btn{
-  padding:13px 24px;
+  padding:12px 22px;
   border-radius:50px;
   border:2px solid var(--primary);
   color:var(--primary)!important;
@@ -111,20 +112,20 @@ nav{
   min-height:100vh;
   display:flex;
   align-items:center;
+  padding-top:120px;
   position:relative;
   overflow:hidden;
-  padding-top:130px;
 }
 
 .hero::before{
   content:'';
   position:absolute;
-  width:600px;
-  height:600px;
-  background:linear-gradient(135deg,#2563eb20,#7c3aed20);
+  width:550px;
+  height:550px;
   border-radius:50%;
-  top:-250px;
-  right:-200px;
+  background:linear-gradient(135deg,#2563eb20,#7c3aed20);
+  top:-200px;
+  right:-150px;
   filter:blur(50px);
 }
 
@@ -133,10 +134,10 @@ nav{
   position:absolute;
   width:450px;
   height:450px;
-  background:linear-gradient(135deg,#06b6d420,#2563eb20);
   border-radius:50%;
-  bottom:-220px;
-  left:-120px;
+  background:linear-gradient(135deg,#06b6d420,#2563eb20);
+  bottom:-200px;
+  left:-100px;
   filter:blur(60px);
 }
 
@@ -153,48 +154,44 @@ nav{
   display:inline-block;
   background:#dbeafe;
   color:var(--primary);
-  padding:10px 20px;
+  padding:10px 18px;
   border-radius:50px;
-  margin-bottom:25px;
+  margin-bottom:22px;
   font-size:14px;
   font-weight:700;
 }
 
 .hero-left h1{
-  font-size:82px;
+  font-size:76px;
   line-height:1.05;
   font-weight:900;
-  margin-bottom:20px;
+  margin-bottom:15px;
 }
 
 .hero-left h2{
-  font-size:34px;
+  font-size:32px;
   color:var(--primary);
-  margin-bottom:28px;
+  margin-bottom:24px;
 }
 
 .hero-left p{
-  font-size:18px;
-  line-height:1.9;
   color:var(--gray);
-  margin-bottom:40px;
-  max-width:650px;
+  line-height:1.9;
+  font-size:18px;
+  margin-bottom:35px;
 }
 
 .hero-buttons{
   display:flex;
-  gap:18px;
+  gap:15px;
   flex-wrap:wrap;
 }
 
 .btn{
-  padding:16px 30px;
+  padding:16px 28px;
   border-radius:16px;
   font-weight:700;
-  transition:0.3s;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+  transition:.3s;
 }
 
 .btn:hover{
@@ -202,9 +199,13 @@ nav{
 }
 
 .btn-primary{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
   color:white;
-  box-shadow:0 12px 30px rgba(37,99,235,0.3);
+  box-shadow:0 10px 30px rgba(37,99,235,.3);
 }
 
 .btn-secondary{
@@ -213,12 +214,11 @@ nav{
   color:var(--dark);
 }
 
-/* ================= PROFILE CARD ================= */
+/* ================= HERO PROFILE ================= */
 
 .hero-right{
   display:flex;
   justify-content:center;
-  position:relative;
 }
 
 .profile-card{
@@ -226,8 +226,7 @@ nav{
   background:white;
   border-radius:35px;
   overflow:hidden;
-  box-shadow:0 20px 60px rgba(15,23,42,0.12);
-  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.12);
 }
 
 .profile-image{
@@ -244,9 +243,9 @@ nav{
   bottom:20px;
   right:20px;
   background:white;
-  padding:18px 22px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  padding:16px 22px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
 
 .floating-badge h3{
@@ -257,63 +256,60 @@ nav{
 .floating-badge p{
   font-size:14px;
   color:var(--gray);
-  font-weight:600;
 }
 
 .profile-content{
-  padding:35px;
+  padding:30px;
 }
 
 .profile-content h3{
-  font-size:30px;
-  margin-bottom:15px;
+  font-size:28px;
+  margin-bottom:12px;
 }
 
 .profile-content p{
   color:var(--gray);
   line-height:1.8;
-  margin-bottom:30px;
 }
 
 .stats{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
+  gap:12px;
+  margin-top:25px;
 }
 
 .stat-box{
   background:#eff6ff;
-  padding:20px;
-  border-radius:20px;
+  border-radius:18px;
+  padding:18px;
   text-align:center;
 }
 
 .stat-box h4{
   color:var(--primary);
-  font-size:26px;
-  margin-bottom:5px;
+  font-size:24px;
 }
 
 .stat-box p{
-  margin:0;
-  font-size:14px;
-  font-weight:600;
+  font-size:13px;
+  margin-top:4px;
 }
 
 /* ================= SECTION TITLE ================= */
 
 section{
-  padding:110px 0;
+  padding:100px 0;
 }
 
 .section-title{
   text-align:center;
-  margin-bottom:70px;
+  margin-bottom:65px;
 }
 
 .section-title h2{
-  font-size:56px;
-  margin-bottom:14px;
+  font-size:54px;
+  margin-bottom:12px;
 }
 
 .section-title p{
@@ -321,267 +317,301 @@ section{
   font-size:18px;
 }
 
-/* ================= ABOUT ================= */
-
-.about{
-  background:white;
-}
-
-.about-card{
-  display:grid;
-  grid-template-columns:350px 1fr;
-  gap:50px;
-  align-items:center;
-  background:#f8fbff;
-  border-radius:35px;
-  padding:50px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.05);
-}
-
-.about-card img{
-  border-radius:28px;
-  height:420px;
-  object-fit:cover;
-}
-
-.about-content h3{
-  font-size:40px;
-  margin-bottom:20px;
-}
-
-.about-content p{
-  color:var(--gray);
-  line-height:2;
-  margin-bottom:20px;
-}
-
-/* ================= SKILLS ================= */
-
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-}
-
-.skill-card{
-  background:white;
-  border-radius:30px;
-  padding:35px;
-  box-shadow:0 10px 35px rgba(0,0,0,0.05);
-  transition:0.3s;
-}
-
-.skill-card:hover{
-  transform:translateY(-10px);
-}
-
-.skill-icon{
-  width:70px;
-  height:70px;
-  border-radius:20px;
-  background:#eff6ff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:32px;
-  margin-bottom:24px;
-}
-
-.skill-card h3{
-  margin-bottom:22px;
-  font-size:26px;
-}
-
-.tags{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.tag{
-  padding:10px 16px;
-  border-radius:50px;
-  background:#eff6ff;
-  color:var(--primary);
-  font-size:14px;
-  font-weight:700;
-}
-
-/* ================= PROJECTS ================= */
-
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:30px;
-}
-
-.project-card{
-  background:white;
-  border-radius:35px;
-  overflow:hidden;
-  box-shadow:0 15px 40px rgba(0,0,0,0.08);
-  transition:0.35s;
-}
-
-.project-card:hover{
-  transform:translateY(-10px);
-}
-
-.project-image{
-  position:relative;
-  overflow:hidden;
-}
-
-.project-image img{
-  height:500px;
-  object-fit:cover;
-  transition:0.4s;
-}
-
-.project-card:hover img{
-  transform:scale(1.05);
-}
-
-.project-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(15,23,42,0.75),transparent);
-}
-
-.project-content{
-  padding:30px;
-}
-
-.project-content h3{
-  font-size:28px;
-  margin-bottom:14px;
-}
-
-.project-content p{
-  color:var(--gray);
-  line-height:1.9;
-  margin-bottom:22px;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-  background:white;
-}
-
-.contact-box{
-  background:linear-gradient(135deg,#0f172a,#1e293b);
-  color:white;
-  padding:90px 60px;
-  border-radius:40px;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.1);
-}
-
-.contact-box h2{
-  font-size:58px;
-  margin-bottom:20px;
-}
-
-.contact-box p{
-  max-width:750px;
-  margin:auto;
-  line-height:1.9;
-  color:#cbd5e1;
-  margin-bottom:40px;
-  font-size:18px;
-}
-
-.contact-buttons{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-.contact-buttons .btn-secondary{
-  background:rgba(255,255,255,0.08);
-  color:white;
-  border:1px solid rgba(255,255,255,0.1);
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  text-align:center;
-  padding:40px 20px;
-  color:var(--gray);
-  font-weight:600;
-}
-
 /* ================= MOBILE ================= */
 
 @media(max-width:1000px){
 
-  .hero-wrapper,
-  .about-card{
-    grid-template-columns:1fr;
-  }
+.hero-wrapper{
+grid-template-columns:1fr;
+}
 
-  .hero-left{
-    text-align:center;
-  }
+.hero-left{
+text-align:center;
+}
 
-  .hero-buttons{
-    justify-content:center;
-  }
+.hero-buttons{
+justify-content:center;
+}
 
-  .profile-card{
-    width:100%;
-    max-width:460px;
-  }
-
-  .timeline::before{
-    left:20px;
-  }
-
-  .timeline-item{
-    width:100%;
-    left:0!important;
-    padding-left:60px;
-    padding-right:0;
-  }
-
-  .timeline-content::before{
-    left:-49px!important;
-  }
+.profile-card{
+width:100%;
+max-width:450px;
+}
 
 }
 
 @media(max-width:768px){
 
-  .nav-links{
-    display:none;
-  }
+.nav-links{
+display:none;
+}
 
-  .hero-left h1{
-    font-size:54px;
-  }
+.hero-left h1{
+font-size:52px;
+}
 
-  .hero-left h2{
-    font-size:28px;
-  }
+.hero-left h2{
+font-size:28px;
+}
 
-  .section-title h2{
-    font-size:42px;
-  }
-
-  .contact-box{
-    padding:50px 25px;
-  }
-
-  .contact-box h2{
-    font-size:42px;
-  }
+.section-title h2{
+font-size:42px;
+}
 
 }
 
+/* ================= ABOUT ================= */
+
+.about{
+background:white;
+}
+
+.about-card{
+display:grid;
+grid-template-columns:260px 1fr;
+gap:45px;
+align-items:center;
+background:#f8fbff;
+padding:45px;
+border-radius:35px;
+box-shadow:0 10px 35px rgba(0,0,0,.05);
+}
+
+.about-card img{
+width:260px;
+height:300px;
+object-fit:cover;
+border-radius:25px;
+}
+
+.about-content h3{
+font-size:38px;
+margin-bottom:18px;
+}
+
+.about-content p{
+color:var(--gray);
+line-height:1.9;
+margin-bottom:16px;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.skill-card{
+background:white;
+border-radius:30px;
+padding:35px;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.skill-card:hover{
+transform:translateY(-8px);
+}
+
+.skill-icon{
+width:70px;
+height:70px;
+border-radius:20px;
+background:#eff6ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+margin-bottom:20px;
+}
+
+.skill-card h3{
+margin-bottom:20px;
+font-size:24px;
+}
+
+.tags{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.tag{
+padding:10px 15px;
+border-radius:50px;
+background:#eff6ff;
+color:var(--primary);
+font-size:13px;
+font-weight:700;
+}
+  /* ================= PROJECTS ================= */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.project-card{
+background:white;
+border-radius:30px;
+overflow:hidden;
+cursor:pointer;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+}
+
+.project-image img{
+height:260px;
+object-fit:cover;
+}
+
+.project-content{
+padding:22px;
+text-align:center;
+}
+
+.project-content h3{
+font-size:22px;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+z-index:9999;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+.modal-content{
+background:white;
+width:100%;
+max-width:850px;
+border-radius:30px;
+overflow:hidden;
+position:relative;
+}
+
+.modal-content img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.modal-content h2{
+padding:25px 30px 10px;
+font-size:34px;
+}
+
+.modal-content p{
+padding:0 30px;
+line-height:1.8;
+color:#64748b;
+}
+
+.modal-box{
+margin:20px 30px;
+padding:20px;
+border-radius:20px;
+background:#f8fafc;
+}
+
+.modal-box h4{
+margin-bottom:10px;
+color:#2563eb;
+}
+
+.close-btn{
+position:absolute;
+top:18px;
+right:22px;
+font-size:34px;
+cursor:pointer;
+background:#111827;
+color:white;
+width:45px;
+height:45px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+@media(max-width:900px){
+
+.projects-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:650px){
+
+.projects-grid{
+grid-template-columns:1fr;
+}
+
+}
+  /* ================= CONTACT ================= */
+
+.contact{
+background:white;
+}
+
+.contact-box{
+background:linear-gradient(
+135deg,
+#0f172a,
+#1e293b
+);
+color:white;
+padding:80px 50px;
+border-radius:35px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.1);
+}
+
+.contact-box h2{
+font-size:54px;
+margin-bottom:18px;
+}
+
+.contact-box p{
+max-width:700px;
+margin:auto;
+line-height:1.9;
+color:#cbd5e1;
+margin-bottom:35px;
+}
+
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+text-align:center;
+padding:35px 20px;
+color:var(--gray);
+font-weight:600;
+}
 </style>
+
 </head>
 
 <body>
@@ -590,179 +620,195 @@ footer{
 
 <nav>
 
-  <div class="container nav-wrapper">
+<div class="container nav-wrapper">
 
-    <div class="logo">
-      👨🏻‍💻 Mohit
-    </div>
+<div class="logo">
+📱 Mohit
+</div>
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact" class="contact-btn">Contact</a>
-    </div>
+<div class="nav-links">
+<a href="#journey">My Journey</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact"
+class="contact-btn">
+Contact
+</a>
+</div>
 
-  </div>
+</div>
 
 </nav>
-
 
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
-  <div class="container hero-wrapper">
+<div class="container hero-wrapper">
 
-    <!-- LEFT CONTENT -->
+<div class="hero-left">
 
-    <div class="hero-left">
+<h4>
+KMP • iOS • Android • Mobile Engineer
+</h4>
 
-      <h4>🚀 Kotlin Multiplatform • iOS • Android • Enterprise Apps</h4>
+<h1>
+Mohit<br>
+Gondaliya
+</h1>
 
-      <h1>
-        Mohit <br>
-        Gondaliya
-      </h1>
+<h2>
+Building Cross-Platform Mobile Experiences
+</h2>
 
-      <h2>
-        Senior KMP & Mobile Engineer
-      </h2>
+<p>
+Kotlin Multiplatform focused Mobile Engineer
+specialized in scalable enterprise applications,
+banking systems, fintech platforms,
+and modern mobile architecture.
+</p>
 
-      <p>
-        Building scalable Kotlin Multiplatform, iOS and Android
-        applications with modern architecture, enterprise security,
-        and premium user experience.
-      </p>
+<div class="hero-buttons">
 
-      <div class="hero-buttons">
+<a href="mailto:mohitgondaliya158@gmail.com"
+class="btn btn-primary">
+Hire Me
+</a>
 
-        <a href="mailto:mohitgondaliya158@gmail.com"
-           class="btn btn-primary">
-          Hire Me
-        </a>
+<a href="#projects"
+class="btn btn-secondary">
+View Projects
+</a>
 
-        <a href="#projects"
-           class="btn btn-secondary">
-          View Projects
-        </a>
+<a href="https://linkedin.com/in/mohitgondaliya"
+target="_blank"
+class="btn btn-secondary">
+LinkedIn
+</a>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-    <!-- RIGHT SIDE -->
+<div class="hero-right">
 
-    <div class="hero-right">
+<div class="profile-card">
 
-      <div class="hero-mobile-wrapper">
+<div class="profile-image">
 
-        <!-- YOUR PROFILE CARD -->
+<img src="images/mobile-feature.png"
+alt="Mohit Mobile Engineer">
 
-        <div class="profile-card-new">
+<div class="floating-badge">
+<h3>KMP</h3>
+<p>Cross Platform Expert</p>
+</div>
 
-          <img
-          src="images/mohit.png"
-          alt="Mohit">
+</div>
 
-          <div class="profile-info">
+<div class="profile-content">
 
-            <h3>Mohit Gondaliya</h3>
+<h3>
+KMP • SwiftUI • Compose
+</h3>
 
-            <p>
-              Senior Mobile Engineer
-            </p>
+<p>
+Specialized in Kotlin Multiplatform,
+SwiftUI, Jetpack Compose,
+enterprise architecture,
+secure banking systems
+and scalable mobile products.
+</p>
 
-            <div class="profile-tags">
-              <span>KMP</span>
-              <span>SwiftUI</span>
-              <span>Compose</span>
-            </div>
+<div class="stats">
 
-          </div>
+<div class="stat-box">
+<h4>20+</h4>
+<p>Apps</p>
+</div>
 
-        </div>
+<div class="stat-box">
+<h4>KMP</h4>
+<p>Focus</p>
+</div>
 
-        <!-- PHONE IMAGE 1 -->
+<div class="stat-box">
+<h4>100%</h4>
+<p>Production</p>
+</div>
 
-        <div class="phone-card phone1">
+</div>
 
-          <img
-          src="images/mobile1.png"
-          alt="Mobile App">
+</div>
 
-        </div>
+</div>
 
-        <!-- PHONE IMAGE 2 -->
+</div>
 
-        <div class="phone-card phone2">
-
-          <img
-          src="images/mobile2.png"
-          alt="Mobile App">
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 <!-- ================= MY JOURNEY ================= -->
 
-<section class="about" id="about">
+<section class="about" id="journey">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-title">
-      <h2>My Journey</h2>
-      <p>Mobile Development Career Path</p>
-    </div>
+<div class="section-title">
+<h2>My Journey</h2>
+<p>Mobile Development Journey</p>
+</div>
 
-    <div class="about-card">
+<div class="about-card">
 
-      <!-- SMALL IMAGE -->
-      <img src="images/mohit-small.jpg" alt="Mohit" class="about-small-img">
+<img src="images/mohit-small.jpg"
+alt="Mohit">
 
-      <div class="about-content">
+<div class="about-content">
 
-        <h3>My Mobile Development Journey</h3>
+<h3>
+From Startup Apps to Enterprise Fintech
+</h3>
 
-        <p>
-          My mobile development journey began in 2018 with
-          <strong>Crowal Apps</strong>, where I developed
-          client-focused mobile applications and gained
-          experience in project delivery, requirement analysis,
-          and client management.
-        </p>
+<p>
+My mobile development journey began in 2018 with
+Crowal Apps, where I developed client-focused
+mobile applications and gained experience in
+project delivery and client management.
+</p>
 
-        <p>
-          I later joined <strong>Appscrip</strong>,
-          working across multiple domains including
-          e-commerce, ride-sharing, grocery, food delivery,
-          healthcare, and social media, delivering scalable
-          white-label solutions for diverse global clients.
-        </p>
+<p>
+I later joined Appscrip, working across
+multiple domains including e-commerce,
+ride-sharing, grocery, food delivery,
+healthcare and social media, delivering
+scalable white-label solutions
+for diverse clients.
+</p>
 
-        <p>
-          Currently at <strong>Société Générale</strong>,
-          I specialize in fintech and enterprise mobility,
-          developing secure and enterprise-grade applications
-          for KYC, leasing, and corporate banking serving
-          millions of users while focusing on Kotlin
-          Multiplatform, modern architecture, and secure
-          mobile ecosystems.
-        </p>
+<p>
+Currently at Société Générale,
+I specialize in fintech,
+developing secure enterprise-grade
+applications for KYC, leasing
+and corporate banking serving
+millions of users.
+</p>
 
-      </div>
+<p>
+Over the years, I have built strong expertise
+in mobile engineering, problem-solving,
+cross-platform development and
+delivering impactful digital solutions
+across industries.
+</p>
 
-    </div>
+</div>
 
-  </div>
+</div>
+
+</div>
 
 </section>
 
@@ -770,274 +816,384 @@ footer{
 
 <section id="skills">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-title">
-      <h2>Technical Skills</h2>
-      <p>Technologies & Frameworks</p>
-    </div>
+<div class="section-title">
+<h2>Technical Skills</h2>
+<p>Technologies & Expertise</p>
+</div>
 
-    <div class="skills-grid">
+<div class="skills-grid">
 
-      <div class="skill-card">
+<!-- Skill 1 -->
 
-        <div class="skill-icon">🍎</div>
+<div class="skill-card">
 
-        <h3>iOS Development</h3>
+<div class="skill-icon">
+🚀
+</div>
 
-        <div class="tags">
-          <div class="tag">Swift</div>
-          <div class="tag">SwiftUI</div>
-          <div class="tag">UIKit</div>
-          <div class="tag">Objective-C</div>
-          <div class="tag">Combine</div>
-        </div>
+<h3>
+Kotlin Multiplatform
+</h3>
 
-      </div>
+<div class="tags">
+<div class="tag">KMP</div>
+<div class="tag">Compose</div>
+<div class="tag">Shared Code</div>
+<div class="tag">Coroutines</div>
+<div class="tag">Flow</div>
+</div>
 
-      <div class="skill-card">
+</div>
 
-        <div class="skill-icon">🤖</div>
+<!-- Skill 2 -->
 
-        <h3>Android & KMP</h3>
+<div class="skill-card">
 
-        <div class="tags">
-          <div class="tag">Kotlin</div>
-          <div class="tag">Compose</div>
-          <div class="tag">KMP</div>
-          <div class="tag">Coroutines</div>
-          <div class="tag">Flow</div>
-        </div>
+<div class="skill-icon">
+🍎
+</div>
 
-      </div>
+<h3>
+iOS Development
+</h3>
 
-      <div class="skill-card">
+<div class="tags">
+<div class="tag">Swift</div>
+<div class="tag">SwiftUI</div>
+<div class="tag">UIKit</div>
+<div class="tag">Objective-C</div>
+<div class="tag">Combine</div>
+</div>
 
-        <div class="skill-icon">⚙️</div>
+</div>
 
-        <h3>Architecture & Tools</h3>
+<!-- Skill 3 -->
 
-        <div class="tags">
-          <div class="tag">MVVM</div>
-          <div class="tag">Firebase</div>
-          <div class="tag">AWS</div>
-          <div class="tag">Git</div>
-          <div class="tag">REST APIs</div>
-        </div>
+<div class="skill-card">
 
-      </div>
+<div class="skill-icon">
+🤖
+</div>
 
-    </div>
+<h3>
+Android Development
+</h3>
 
-  </div>
+<div class="tags">
+<div class="tag">Kotlin</div>
+<div class="tag">Jetpack</div>
+<div class="tag">Compose</div>
+<div class="tag">MVVM</div>
+<div class="tag">Navigation</div>
+</div>
+
+</div>
+
+<!-- Skill 4 -->
+
+<div class="skill-card">
+
+<div class="skill-icon">
+⚙️
+</div>
+
+<h3>
+Architecture & Backend
+</h3>
+
+<div class="tags">
+<div class="tag">MVVM</div>
+<div class="tag">REST API</div>
+<div class="tag">Firebase</div>
+<div class="tag">Encryption</div>
+<div class="tag">Git</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- ================= PROJECTS ================= -->
+  <!-- ================= PROJECTS ================= -->
 
 <section id="projects">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-title">
-      <h2>Featured Projects</h2>
-      <p>Enterprise & Startup Applications</p>
-    </div>
+<div class="section-title">
+<h2>Featured Projects</h2>
+<p>Click Project To View Details</p>
+</div>
 
-    <div class="projects-grid">
+<div class="projects-grid">
 
-      <!-- PROJECT 1 -->
+<!-- PROJECT 1 -->
 
-      <div class="project-card">
+<div class="project-card"
+onclick="openProject(
+'images/gcm.jpg',
+'Global Cash Mobile',
+'Corporate banking application enabling real-time account management and secure enterprise transactions.',
+'Swift, UIKit, REST API, Security',
+'Login, Dashboard, Transactions, Notification'
+)">
 
-        <!-- PROJECT 1 -->
-<div class="project-card">
-  <div class="project-image">
-    <img src="images/gcm.jpg" alt="Global Cash Mobile">
-    <div class="project-overlay"></div>
-  </div>
-  <div class="project-content">
-    <h3>Global Cash Mobile</h3>
-    <p>
-      Corporate banking application enabling real-time account tracking,
-      secure transactions and enterprise financial workflows.
-    </p>
-    <div class="tags">
-      <div class="tag">Banking</div>
-      <div class="tag">Swift</div>
-      <div class="tag">Security</div>
-    </div>
-  </div>
+<div class="project-image">
+<img src="images/gcm.jpg" alt="GCM">
+</div>
+
+<div class="project-content">
+<h3>Global Cash Mobile</h3>
+</div>
+
 </div>
 
 <!-- PROJECT 2 -->
-<div class="project-card">
-  <div class="project-image">
-    <img src="images/sgmarkets.jpg" alt="SG Markets">
-    <div class="project-overlay"></div>
-  </div>
-  <div class="project-content">
-    <h3>SG Markets</h3>
-    <p>
-      Secure employee banking portal using SwiftUI,
-      encrypted workflows and enterprise architecture.
-    </p>
-    <div class="tags">
-      <div class="tag">SwiftUI</div>
-      <div class="tag">Banking</div>
-      <div class="tag">Security</div>
-    </div>
-  </div>
+
+<div class="project-card"
+onclick="openProject(
+'images/sgmarkets.jpg',
+'SG Markets',
+'Secure banking and enterprise workflow application.',
+'SwiftUI, API, Encryption',
+'Dashboard, Authentication, Reports'
+)">
+
+<div class="project-image">
+<img src="images/sgmarkets.jpg" alt="SG Markets">
+</div>
+
+<div class="project-content">
+<h3>SG Markets</h3>
+</div>
+
 </div>
 
 <!-- PROJECT 3 -->
-<div class="project-card">
-  <div class="project-image">
-    <img src="images/ayvens.jpg" alt="My Ayvens India">
-    <div class="project-overlay"></div>
-  </div>
-  <div class="project-content">
-    <h3>My Ayvens India</h3>
-    <p>
-      Fleet management platform for leased vehicles
-      with tracking and enterprise workflows.
-    </p>
-    <div class="tags">
-      <div class="tag">Fleet</div>
-      <div class="tag">Enterprise</div>
-      <div class="tag">iOS</div>
-    </div>
-  </div>
+
+<div class="project-card"
+onclick="openProject(
+'images/ayvens.jpg',
+'My Ayvens India',
+'Fleet and leasing management application.',
+'Swift, MVVM, REST',
+'Tracking, Vehicle Details, Service'
+)">
+
+<div class="project-image">
+<img src="images/ayvens.jpg" alt="Ayvens">
+</div>
+
+<div class="project-content">
+<h3>My Ayvens India</h3>
+</div>
+
 </div>
 
 <!-- PROJECT 4 -->
-<div class="project-card">
-  <div class="project-image">
-    <img src="images/roadyo.jpg" alt="Roadyo">
-    <div class="project-overlay"></div>
-  </div>
-  <div class="project-content">
-    <h3>Roadyo</h3>
-    <p>
-      Ride-sharing and logistics platform with GPS tracking,
-      realtime updates and delivery workflows.
-    </p>
-    <div class="tags">
-      <div class="tag">Realtime</div>
-      <div class="tag">Maps</div>
-      <div class="tag">Logistics</div>
-    </div>
-  </div>
+
+<div class="project-card"
+onclick="openProject(
+'images/roadyo.jpg',
+'Roadyo',
+'Ride sharing and logistics platform.',
+'Swift, Maps, Firebase',
+'Maps, Booking, Tracking'
+)">
+
+<div class="project-image">
+<img src="images/roadyo.jpg" alt="Roadyo">
+</div>
+
+<div class="project-content">
+<h3>Roadyo</h3>
+</div>
+
 </div>
 
 <!-- PROJECT 5 -->
-<div class="project-card">
-  <div class="project-image">
-    <img src="images/roadyopartner.jpg" alt="Roadyo Partner">
-    <div class="project-overlay"></div>
-  </div>
-  <div class="project-content">
-    <h3>Roadyo Partner</h3>
-    <p>
-      Driver and delivery partner app with live tracking,
-      navigation and delivery management.
-    </p>
-    <div class="tags">
-      <div class="tag">Driver</div>
-      <div class="tag">Tracking</div>
-      <div class="tag">Delivery</div>
-    </div>
-  </div>
+
+<div class="project-card"
+onclick="openProject(
+'images/roadyopartner.jpg',
+'Roadyo Partner',
+'Driver and delivery partner application.',
+'Swift, GPS, Firebase',
+'Navigation, Orders, Delivery'
+)">
+
+<div class="project-image">
+<img src="images/roadyopartner.jpg" alt="Roadyo Partner">
+</div>
+
+<div class="project-content">
+<h3>Roadyo Partner</h3>
+</div>
+
 </div>
 
 <!-- PROJECT 6 -->
-<div class="project-card">
-  <div class="project-image">
-    <img src="images/meaty.jpg" alt="Meaty">
-    <div class="project-overlay"></div>
-  </div>
-  <div class="project-content">
-    <h3>Meaty</h3>
-    <p>
-      Meat and seafood ordering application
-      with rapid delivery workflows.
-    </p>
-    <div class="tags">
-      <div class="tag">Food</div>
-      <div class="tag">Delivery</div>
-      <div class="tag">Commerce</div>
-    </div>
-  </div>
+
+<div class="project-card"
+onclick="openProject(
+'images/meaty.jpg',
+'Meaty',
+'Food ordering and delivery application.',
+'Swift, Ecommerce, API',
+'Cart, Orders, Payment'
+)">
+
+<div class="project-image">
+<img src="images/meaty.jpg" alt="Meaty">
 </div>
 
-<!-- PROJECT 7 -->
-<div class="project-card">
-  <div class="project-image">
-    <img src="images/meamo.jpg" alt="Meamo">
-    <div class="project-overlay"></div>
-  </div>
-  <div class="project-content">
-    <h3>Meamo</h3>
-    <p>
-      India's Jhatka meat delivery platform
-      focused on ecommerce and rapid fulfilment.
-    </p>
-    <div class="tags">
-      <div class="tag">Ecommerce</div>
-      <div class="tag">FoodTech</div>
-      <div class="tag">iOS</div>
-    </div>
-  </div>
+<div class="project-content">
+<h3>Meaty</h3>
 </div>
 
-        </div>
+</div>
 
-      </div>
+</div>
 
-    </div>
-
-  </div>
+</div>
 
 </section>
 
-<!-- ================= CONTACT ================= -->
+<!-- ================= PROJECT MODAL ================= -->
+
+<div id="projectModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn"
+onclick="closeProject()">
+×
+</span>
+
+<img id="modalImage">
+
+<h2 id="modalTitle"></h2>
+
+<p id="modalDesc"></p>
+
+<div class="modal-box">
+<h4>Technology Used</h4>
+<p id="modalTech"></p>
+</div>
+
+<div class="modal-box">
+<h4>Components Used</h4>
+<p id="modalComp"></p>
+</div>
+
+</div>
+
+</div>
+
+  <!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
-  <div class="container">
+<div class="container">
 
-    <div class="contact-box">
+<div class="contact-box">
 
-      <h2>Let’s Build Something Great</h2>
+<h2>
+Let's Build Something Great
+</h2>
 
-      <p>
-        Available for freelance projects,
-        Kotlin Multiplatform consulting,
-        enterprise app development,
-        and long-term engineering collaborations.
-      </p>
+<p>
+Available for freelance projects,
+Kotlin Multiplatform consulting,
+enterprise mobile development
+and long-term engineering collaboration.
+</p>
 
-      <div class="contact-buttons">
+<div class="contact-buttons">
 
-        <a href="mailto:mohitgondaliya158@gmail.com" class="btn btn-primary">
-          Contact Me
-        </a>
+<a href="mailto:mohitgondaliya158@gmail.com"
+class="btn btn-primary">
+Contact Me
+</a>
 
-        <a href="https://linkedin.com/in/mohitgondaliya" target="_blank" class="btn btn-secondary">
-          LinkedIn
-        </a>
+<a href="https://linkedin.com/in/mohitgondaliya"
+target="_blank"
+class="btn btn-secondary">
+LinkedIn
+</a>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
-  © 2026 Mohit Gondaliya • Senior Mobile Engineer
+© 2026 Mohit Gondaliya • KMP Mobile Engineer
 </footer>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+function openProject(
+img,
+title,
+desc,
+tech,
+comp
+){
+document.getElementById(
+'projectModal'
+).style.display='flex';
+
+document.getElementById(
+'modalImage'
+).src=img;
+
+document.getElementById(
+'modalTitle'
+).innerText=title;
+
+document.getElementById(
+'modalDesc'
+).innerText=desc;
+
+document.getElementById(
+'modalTech'
+).innerText=tech;
+
+document.getElementById(
+'modalComp'
+).innerText=comp;
+}
+
+function closeProject(){
+document.getElementById(
+'projectModal'
+).style.display='none';
+}
+
+window.onclick=function(event){
+let modal=document.getElementById(
+'projectModal'
+);
+
+if(event.target==modal){
+modal.style.display='none';
+}
+}
+
+</script>
 
 </body>
 </html>
